@@ -17,6 +17,9 @@ devDependencies:
   '@types/node':
     specifier: ~16.11.7
     version: 16.11.7
+  picocolors:
+    specifier: ^1.0.0
+    version: 1.0.0
   prettier:
     specifier: ~2.8.1
     version: 2.8.1
