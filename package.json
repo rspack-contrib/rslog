@@ -21,11 +21,13 @@
     "gen-release-note": "modern gen-release-note",
     "release": "modern release",
     "new": "modern new",
-    "upgrade": "modern upgrade"
+    "upgrade": "modern upgrade",
+    "test": "modern test"
   },
   "packageManager": "pnpm@8.8.0",
   "devDependencies": {
     "@modern-js/module-tools": "2.35.1",
+    "@modern-js/plugin-testing": "2.35.1",
     "@modern-js/tsconfig": "2.35.1",
     "@types/jest": "~29.2.4",
     "@types/node": "~16.11.7",
