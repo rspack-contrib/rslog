@@ -1,21 +1,15 @@
 import color from 'picocolors';
 import { LOG_LEVEL, LOG_TYPES } from './constants';
-import { getLongestLabelLength, isErrorStackMessage } from './utils';
-import type { Options, LogMessage, LogType, LogFunction } from './types';
+import { isErrorStackMessage } from './utils';
+import type { Options, LogMessage, LogFunction } from './types';
 
-export const createLogger = <T extends Record<string, LogType>>(
-  options: Options<T> = {},
-) => {
-  const level = options.level || LOG_LEVEL.log;
-  const types = { ...LOG_TYPES, ...options.types };
-  const labelLength = getLongestLabelLength(
-    Object.values(types).map(item => (item as LogType).label),
-  );
+type Keys = keyof typeof LOG_TYPES;
 
-  type Type = keyof typeof types;
+export const createLogger = (options: Options = {}) => {
+  const maxLevel = options.level || LOG_LEVEL.log;
 
-  const log = (type: Type, message?: LogMessage, ...args: string[]) => {
-    if (LOG_LEVEL[type] > LOG_LEVEL[level]) {
+  const log = (type: Keys, message?: LogMessage, ...args: string[]) => {
+    if (LOG_LEVEL[LOG_TYPES[type].level] > LOG_LEVEL[maxLevel]) {
       return;
     }
 
@@ -24,16 +18,16 @@ export const createLogger = <T extends Record<string, LogType>>(
       return;
     }
 
+    const logType = LOG_TYPES[type];
+
     let label = '';
-    let text = '';
-    const logType = types[type];
 
     if ('label' in logType) {
-      label = label.padEnd(labelLength);
-      label = color.bold(
-        logType.LogFormatter ? logType.LogFormatter(label) : label,
-      );
+      label = (logType.label || '').padEnd(7);
+      label = color.bold(logType.formatter ? logType.formatter(label) : label);
     }
+
+    let text = '';
 
     if (message instanceof Error) {
       if (message.stack) {
@@ -53,14 +47,14 @@ export const createLogger = <T extends Record<string, LogType>>(
       text = `${message}`;
     }
 
-    const log = label.length > 0 ? `${label} ${text}` : text;
+    const log = label.length ? `${label} ${text}` : text;
 
     console.log(log, ...args);
   };
 
-  const logger = {} as Record<Type, LogFunction>;
+  const logger = {} as Record<Keys, LogFunction>;
 
-  (Object.keys(types) as Type[]).forEach((key: Type) => {
+  (Object.keys(LOG_TYPES) as Keys[]).forEach(key => {
     logger[key] = (message, ...args) => log(key, message, ...args);
   });
 

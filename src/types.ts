@@ -9,12 +9,11 @@ export type LogFormatter = (
 export interface LogType {
   label?: string;
   level: LogLevel;
-  LogFormatter?: LogFormatter;
+  formatter?: LogFormatter;
 }
 
 export type LogFunction = (message?: LogMessage, ...args: any[]) => void;
 
-export interface Options<T extends Record<string, LogType>> {
-  level?: string;
-  types?: T;
+export interface Options {
+  level?: LogLevel;
 }

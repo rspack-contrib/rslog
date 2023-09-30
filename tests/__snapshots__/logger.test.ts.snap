@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`logger should create new logger correctly 1`] = `
+error   Error: this is an error message
+    at Object.<anonymous> (<ROOT>/tests/logger.test.ts:39:18)
+    at Promise.then.completed (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (<ROOT>/node_modules/.pnpm/jest-runner@29.7.0/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (<ROOT>/node_modules/.pnpm/jest-runner@29.7.0/node_modules/jest-runner/build/runTest.js:444:34)
+    at Object.worker (<ROOT>/node_modules/.pnpm/jest-runner@29.7.0/node_modules/jest-runner/build/testWorker.js:106:12)
+`;
+
+exports[`logger should log as expected 1`] = `
+this is a log message,info    this is an info message,warn    this is a warn message,ready   this is a warn message,debug   this is a warn message,error   Error: this is an error message
+    at Object.<anonymous> (<ROOT>/tests/logger.test.ts:21:18)
+    at Promise.then.completed (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/utils.js:298:28)
+    at new Promise (<anonymous>)
+    at callAsyncCircusFn (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/utils.js:231:10)
+    at _callCircusTest (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/run.js:316:40)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at _runTest (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/run.js:252:3)
+    at _runTestsForDescribeBlock (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/run.js:126:9)
+    at _runTestsForDescribeBlock (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/run.js:121:9)
+    at run (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/run.js:71:3)
+    at runAndTransformResultsToJestFormat (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (<ROOT>/node_modules/.pnpm/jest-runner@29.7.0/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (<ROOT>/node_modules/.pnpm/jest-runner@29.7.0/node_modules/jest-runner/build/runTest.js:444:34)
+    at Object.worker (<ROOT>/node_modules/.pnpm/jest-runner@29.7.0/node_modules/jest-runner/build/testWorker.js:106:12),success this is a success message
+`;

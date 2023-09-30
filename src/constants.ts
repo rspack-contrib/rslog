@@ -13,32 +13,34 @@ export const LOG_TYPES = {
   error: {
     label: 'error',
     level: 'error',
-    LogFormatter: color.red,
+    formatter: color.red,
   },
   info: {
     label: 'info',
     level: 'info',
-    LogFormatter: color.cyan,
+    formatter: color.cyan,
   },
   ready: {
     label: 'ready',
     level: 'info',
-    LogFormatter: color.green,
+    formatter: color.magenta,
   },
   success: {
     label: 'success',
     level: 'info',
-    LogFormatter: color.green,
+    formatter: color.green,
   },
   warn: {
     label: 'warn',
     level: 'warn',
-    LogFormatter: color.yellow,
+    formatter: color.yellow,
   },
   debug: {
     label: 'debug',
     level: 'debug',
-    LogFormatter: color.red,
+    formatter: color.magenta,
   },
-  log: { level: 'log' },
+  log: {
+    level: 'log',
+  },
 } satisfies Record<string, LogType>;
