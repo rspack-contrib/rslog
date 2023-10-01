@@ -32,7 +32,7 @@ export const createLogger = (options: Options = {}) => {
     if (message instanceof Error) {
       if (message.stack) {
         const [name, ...rest] = message.stack.split('\n');
-        text = `${name}\n${color.gray(rest.join('\n'))}`;
+        text = `${name.replace('Error: ', '')}\n${color.gray(rest.join('\n'))}`;
       } else {
         text = message.message;
       }
