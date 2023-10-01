@@ -2,6 +2,7 @@ const { logger } = require('.');
 
 logger.greet(`\n➜ Rslog v1.0.0\n`);
 logger.info('This is a info message');
+logger.start('This is a start message');
 logger.warn('This is a warn message');
 logger.debug('This is a debug message');
 logger.ready('This is a ready message');

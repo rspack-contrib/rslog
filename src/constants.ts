@@ -1,22 +1,35 @@
 import color from 'picocolors';
 import type { LogType } from './types';
 
-export const LOG_LEVEL: Record<string, number> = {
+export const LOG_LEVEL = {
   error: 0,
   warn: 1,
   info: 2,
-  debug: 3,
-  log: 4,
-};
+  log: 3,
+  verbose: 4,
+} as const;
 
 export const LOG_TYPES = {
+  // Level error
   error: {
     label: 'error',
     level: 'error',
     formatter: color.red,
   },
+  // Level warn
+  warn: {
+    label: 'warn',
+    level: 'warn',
+    formatter: color.yellow,
+  },
+  // Level info
   info: {
     label: 'info',
+    level: 'info',
+    formatter: color.cyan,
+  },
+  start: {
+    label: 'start',
     level: 'info',
     formatter: color.cyan,
   },
@@ -30,17 +43,14 @@ export const LOG_TYPES = {
     level: 'info',
     formatter: color.green,
   },
-  warn: {
-    label: 'warn',
-    level: 'warn',
-    formatter: color.yellow,
-  },
-  debug: {
-    label: 'debug',
-    level: 'debug',
-    formatter: color.magenta,
-  },
+  // Level log
   log: {
     level: 'log',
+  },
+  // Level debug
+  debug: {
+    label: 'debug',
+    level: 'verbose',
+    formatter: color.magenta,
   },
 } satisfies Record<string, LogType>;

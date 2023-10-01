@@ -48,11 +48,11 @@ logger.greet(`\n➜ Rslog v1.0.0\n`);
 // Info
 logger.info('This is a info message');
 
+// Start
+logger.start('This is a start message');
+
 // Warn
 logger.warn('This is a warn message');
-
-// Debug
-logger.debug('This is a debug message');
 
 // Ready
 logger.ready('This is a ready message');
@@ -64,6 +64,37 @@ logger.success('This is a success message');
 logger.error('This is a error message');
 logger.error(new Error('This is a error message with stack'));
 
+// Debug
+logger.debug('This is a debug message');
+
 // Same as console.log
 logger.log('This is a log message');
 ```
+
+## Log Level
+
+You can create a new logger instance through `createLogger` and specify the log level:
+
+```js
+const { createLogger } = require('rslog');
+
+const logger = createLogger({ level: 'warn' });
+
+// Will print
+logger.error('This is a error message');
+logger.warn('This is a warn message');
+
+// Will not print
+logger.info('This is a info message');
+logger.log('This is a log message');
+```
+
+The log levels of each method are as follows:
+
+| Level   | Method                              |
+| ------- | ----------------------------------- |
+| error   | `error`                             |
+| warn    | `warn`                              |
+| info    | `info`, `start`, `ready`, `success` |
+| log     | `log`                               |
+| verbose | `debug`                             |
