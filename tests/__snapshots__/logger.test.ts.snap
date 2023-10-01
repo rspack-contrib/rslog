@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`logger should create new logger correctly 1`] = `
-error   Error: this is an error message
+error   this is an error message
     at Object.<anonymous> (<ROOT>/tests/logger.test.ts:39:18)
     at Promise.then.completed (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/utils.js:298:28)
     at new Promise (<anonymous>)
@@ -20,7 +20,7 @@ error   Error: this is an error message
 `;
 
 exports[`logger should log as expected 1`] = `
-this is a log message,info    this is an info message,warn    this is a warn message,ready   this is a warn message,debug   this is a warn message,error   Error: this is an error message
+this is a log message,info    this is an info message,warn    this is a warn message,ready   this is a ready message,debug   this is a debug message,error   this is an error message
     at Object.<anonymous> (<ROOT>/tests/logger.test.ts:21:18)
     at Promise.then.completed (<ROOT>/node_modules/.pnpm/jest-circus@29.7.0/node_modules/jest-circus/build/utils.js:298:28)
     at new Promise (<anonymous>)
