@@ -55,7 +55,7 @@ export const createLogger = (options: Options = {}) => {
   const logger = {} as Record<Keys, LogFunction>;
 
   (Object.keys(LOG_TYPES) as Keys[]).forEach(key => {
-    logger[key] = (message, ...args) => log(key, message, ...args);
+    logger[key] = (...args) => log(key, ...args);
   });
 
   return logger;

@@ -16,8 +16,8 @@ describe('logger', () => {
     logger.log('this is a log message');
     logger.info('this is an info message');
     logger.warn('this is a warn message');
-    logger.ready('this is a warn message');
-    logger.debug('this is a warn message');
+    logger.ready('this is a ready message');
+    logger.debug('this is a debug message');
     logger.error(new Error('this is an error message'));
     logger.success('this is a success message');
 
@@ -34,8 +34,8 @@ describe('logger', () => {
     logger.log('this is a log message');
     logger.info('this is an info message');
     logger.warn('this is a warn message');
-    logger.ready('this is a warn message');
-    logger.debug('this is a warn message');
+    logger.ready('this is a ready message');
+    logger.debug('this is a debug message');
     logger.error(new Error('this is an error message'));
     logger.success('this is a success message');
 

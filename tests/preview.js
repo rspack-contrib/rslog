@@ -1,9 +1,10 @@
 const { logger } = require('..');
 
-logger.log('This is log');
-logger.info('This is info');
-logger.warn('This is warn');
-logger.debug('This is debug');
-logger.ready('This is ready');
-logger.error('This is error');
-logger.success('This is success');
+logger.log('This is a log message');
+logger.info('This is a info message');
+logger.warn('This is a warn message');
+logger.debug('This is a debug message');
+logger.ready('This is a ready message');
+logger.success('This is a success message');
+logger.error('This is a error message');
+logger.error(new Error('This is a error message with stack'));
