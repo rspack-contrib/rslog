@@ -1,4 +1,5 @@
 import color from 'picocolors';
+import { gradient } from './gradient';
 import { LOG_LEVEL, LOG_TYPES } from './constants';
 import { isErrorStackMessage } from './utils';
 import type { Options, LogMessage, LogFunction } from './types';
@@ -52,7 +53,13 @@ export const createLogger = (options: Options = {}) => {
     console.log(log, ...args);
   };
 
-  const logger = {} as Record<Keys, LogFunction>;
+  type Logger = Record<Keys, LogFunction> & {
+    greet: (message: string) => void;
+  };
+
+  const logger = {
+    greet: (message: string) => log('log', gradient(message)),
+  } as Logger;
 
   (Object.keys(LOG_TYPES) as Keys[]).forEach(key => {
     logger[key] = (...args) => log(key, ...args);

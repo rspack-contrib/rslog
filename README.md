@@ -42,8 +42,8 @@ import { logger } from 'rslog';
 - Log:
 
 ```js
-// Same as console.log
-logger.log('This is a log message');
+// A gradient welcome log
+logger.greet(`\n➜ Rslog v1.0.0\n`);
 
 // Info
 logger.info('This is a info message');
@@ -63,4 +63,7 @@ logger.success('This is a success message');
 // Error
 logger.error('This is a error message');
 logger.error(new Error('This is a error message with stack'));
+
+// Same as console.log
+logger.log('This is a log message');
 ```
