@@ -1,6 +1,5 @@
-const { logger } = require('..');
+const { logger } = require('.');
 
-logger.log('This is a log message');
 logger.info('This is a info message');
 logger.warn('This is a warn message');
 logger.debug('This is a debug message');
