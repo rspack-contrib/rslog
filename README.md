@@ -9,8 +9,7 @@ A tiny, intuitive, type-friendly logger for Node.js.
 
 ## Preview
 
-![Artboard](https://github.com/rspack-contrib/rslog/assets/7237365/410e19c3-04c9-48e7-a05b-e358b138f79c)
-
+![Artboard](https://github.com/rspack-contrib/rslog/assets/7237365/436d6364-550d-4e0d-bc0f-9df1327c46b3)
 
 ## Install
 
