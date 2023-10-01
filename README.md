@@ -7,6 +7,11 @@ A tiny, intuitive, type-friendly logger for Node.js.
 - **Intuitive**. Clear log prefix.
 - **Type-friendly**. Written in TypeScript.
 
+## Preview
+
+![Artboard](https://github.com/rspack-contrib/rslog/assets/7237365/410e19c3-04c9-48e7-a05b-e358b138f79c)
+
+
 ## Install
 
 ```bash
