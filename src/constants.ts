@@ -23,7 +23,7 @@ export const LOG_TYPES = {
   ready: {
     label: 'ready',
     level: 'info',
-    formatter: color.magenta,
+    formatter: color.green,
   },
   success: {
     label: 'success',
