@@ -13,13 +13,6 @@
     "build": "modern build",
     "build:watch": "modern build -w",
     "reset": "rimraf ./**/node_modules",
-    "lint": "modern lint",
-    "change": "modern change",
-    "bump": "modern bump",
-    "pre": "modern pre",
-    "change-status": "modern change-status",
-    "gen-release-note": "modern gen-release-note",
-    "release": "modern release",
     "new": "modern new",
     "upgrade": "modern upgrade",
     "test": "modern test"

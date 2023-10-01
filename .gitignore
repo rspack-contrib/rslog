@@ -12,7 +12,6 @@ node_modules/
 .pnpm-store/
 *.tsbuildinfo
 .eslintcache
-.changeset/pre.json
 
 dist/
 coverage/
