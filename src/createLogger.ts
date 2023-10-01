@@ -7,7 +7,7 @@ import type { Options, LogMessage, LogFunction } from './types';
 type Keys = keyof typeof LOG_TYPES;
 
 export const createLogger = (options: Options = {}) => {
-  const maxLevel = options.level || LOG_LEVEL.log;
+  const maxLevel = options.level || 'log';
 
   const log = (type: Keys, message?: LogMessage, ...args: string[]) => {
     if (LOG_LEVEL[LOG_TYPES[type].level] > LOG_LEVEL[maxLevel]) {

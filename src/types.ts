@@ -1,4 +1,4 @@
-export type LogLevel = 'log' | 'debug' | 'info' | 'warn' | 'error';
+export type LogLevel = 'error' | 'warn' | 'info' | 'log' | 'verbose';
 
 export type LogMessage = number | string | Error | null;
 
