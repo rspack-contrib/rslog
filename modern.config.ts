@@ -8,6 +8,12 @@ export default defineConfig({
   buildConfig: {
     target: 'es2019',
     minify: 'terser',
+    esbuildOptions: options => {
+      if (options.format === 'esm') {
+        options.outExtension = { '.js': '.mjs' };
+      }
+      return options;
+    },
   },
   testing: {
     jest(config) {
