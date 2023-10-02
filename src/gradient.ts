@@ -1,3 +1,4 @@
+import { bold } from './color';
 import { isColorSupported } from './utils';
 
 // RGB for #bdfff3
@@ -22,8 +23,8 @@ export function gradient(message: string) {
     let r = Math.round(startColor[0] + colorStep[0] * i);
     let g = Math.round(startColor[1] + colorStep[1] * i);
     let b = Math.round(startColor[2] + colorStep[2] * i);
-    output += `\x1b[38;2;${r};${g};${b}m${message[i]}\x1b[0m`;
+    output += `\x1b[38;2;${r};${g};${b}m${message[i]}\x1b[39m`;
   }
 
-  return output;
+  return bold(output);
 }
