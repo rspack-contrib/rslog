@@ -6,6 +6,7 @@ export let logger = createLogger();
 
 export type {
   Options,
+  Logger,
   LogType,
   LogLevel,
   LogMessage,

@@ -2,14 +2,12 @@ import { bold, gray } from './color';
 import { gradient } from './gradient';
 import { LOG_LEVEL, LOG_TYPES } from './constants';
 import { isErrorStackMessage } from './utils';
-import type { Options, LogMessage, LogFunction } from './types';
-
-type Keys = keyof typeof LOG_TYPES;
+import type { Options, LogMessage, Logger, LogMethods } from './types';
 
 export let createLogger = (options: Options = {}) => {
   let maxLevel = options.level || 'log';
 
-  let log = (type: Keys, message?: LogMessage, ...args: string[]) => {
+  let log = (type: LogMethods, message?: LogMessage, ...args: string[]) => {
     if (LOG_LEVEL[LOG_TYPES[type].level] > LOG_LEVEL[maxLevel]) {
       return;
     }
@@ -48,15 +46,11 @@ export let createLogger = (options: Options = {}) => {
     console.log(label.length ? `${label} ${text}` : text, ...args);
   };
 
-  type Logger = Record<Keys, LogFunction> & {
-    greet: (message: string) => void;
-  };
-
   let logger = {
     greet: (message: string) => log('log', gradient(message)),
   } as Logger;
 
-  (Object.keys(LOG_TYPES) as Keys[]).forEach(key => {
+  (Object.keys(LOG_TYPES) as LogMethods[]).forEach(key => {
     logger[key] = (...args) => log(key, ...args);
   });
 
