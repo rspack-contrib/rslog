@@ -25,6 +25,9 @@
     "upgrade": "modern upgrade",
     "test": "modern test"
   },
+  "engines": {
+    "node": ">=14.17.6"
+  },
   "packageManager": "pnpm@8.8.0",
   "devDependencies": {
     "@modern-js/module-tools": "2.35.1",

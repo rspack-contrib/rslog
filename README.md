@@ -99,7 +99,13 @@ The log levels of each method are as follows:
 | log     | `log`                               |
 | verbose | `debug`                             |
 
+## Environment
+
+Rslog provides both CommonJS and ESModule output and supports Node.js >= 14.
+
 ## Credits
+
+Rslog is built with [Modern.js](https://github.com/web-infra-dev/modern.js).
 
 The color implementation of Rslog are modified from [alexeyraspopov/picocolors](https://github.com/alexeyraspopov/picocolors).
 
