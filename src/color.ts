@@ -1,8 +1,9 @@
 import { isColorSupported } from './utils';
-import type { LogFormatter } from './types';
+
+export type ColorFn = (input: string | number | null | undefined) => string;
 
 let formatter =
-  (open: string, close: string, replace = open): LogFormatter =>
+  (open: string, close: string, replace = open): ColorFn =>
   input => {
     let string = '' + input;
     let index = string.indexOf(close, open.length);

@@ -10,5 +10,4 @@ export type {
   LogLevel,
   LogMessage,
   LogFunction,
-  LogFormatter,
 } from './types';

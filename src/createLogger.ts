@@ -25,7 +25,7 @@ export let createLogger = (options: Options = {}) => {
 
     if ('label' in logType) {
       label = (logType.label || '').padEnd(7);
-      label = color.bold(logType.formatter ? logType.formatter(label) : label);
+      label = color.bold(logType.color ? logType.color(label) : label);
     }
 
     let text = '';

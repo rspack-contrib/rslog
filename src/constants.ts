@@ -14,34 +14,34 @@ export let LOG_TYPES = {
   error: {
     label: 'error',
     level: 'error',
-    formatter: color.red,
+    color: color.red,
   },
   // Level warn
   warn: {
     label: 'warn',
     level: 'warn',
-    formatter: color.yellow,
+    color: color.yellow,
   },
   // Level info
   info: {
     label: 'info',
     level: 'info',
-    formatter: color.cyan,
+    color: color.cyan,
   },
   start: {
     label: 'start',
     level: 'info',
-    formatter: color.cyan,
+    color: color.cyan,
   },
   ready: {
     label: 'ready',
     level: 'info',
-    formatter: color.green,
+    color: color.green,
   },
   success: {
     label: 'success',
     level: 'info',
-    formatter: color.green,
+    color: color.green,
   },
   // Level log
   log: {
@@ -51,6 +51,6 @@ export let LOG_TYPES = {
   debug: {
     label: 'debug',
     level: 'verbose',
-    formatter: color.magenta,
+    color: color.magenta,
   },
 } satisfies Record<string, LogType>;
