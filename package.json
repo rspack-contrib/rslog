@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "prepare": "modern build",
-    "preview": "node ./preview.js",
+    "preview": "node ./preview.mjs",
     "dev": "modern dev",
     "build": "modern build",
     "build:watch": "modern build -w",

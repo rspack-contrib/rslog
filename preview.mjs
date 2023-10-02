@@ -1,4 +1,4 @@
-const { logger } = require('.');
+import { logger } from './dist/es/index.mjs';
 
 logger.greet(`\n➜ Rslog v1.0.0\n`);
 logger.info('This is a info message');
