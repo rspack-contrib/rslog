@@ -102,3 +102,7 @@ The log levels of each method are as follows:
 ## Credits
 
 The color implementation of Rslog are modified from [alexeyraspopov/picocolors](https://github.com/alexeyraspopov/picocolors).
+
+## License
+
+Rslog is [MIT licensed](https://github.com/rspack-contrib/rslog/blob/main/LICENSE).
