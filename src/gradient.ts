@@ -11,7 +11,10 @@ export function gradient(message: string) {
     return message;
   }
 
-  let steps = message.length;
+  // split string and handle emoji correctly
+  // https://stackoverflow.com/questions/24531751/how-can-i-split-a-string-containing-emoji-into-an-array
+  let chars = [...message];
+  let steps = chars.length;
   let colorStep = [
     (endColor[0] - startColor[0]) / steps,
     (endColor[1] - startColor[1]) / steps,
@@ -23,7 +26,7 @@ export function gradient(message: string) {
     let r = Math.round(startColor[0] + colorStep[0] * i);
     let g = Math.round(startColor[1] + colorStep[1] * i);
     let b = Math.round(startColor[2] + colorStep[2] * i);
-    output += `\x1b[38;2;${r};${g};${b}m${message[i]}\x1b[39m`;
+    output += `\x1b[38;2;${r};${g};${b}m${chars[i]}\x1b[39m`;
   }
 
   return bold(output);
