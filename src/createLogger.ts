@@ -1,4 +1,4 @@
-import color from 'picocolors';
+import { color } from './color';
 import { gradient } from './gradient';
 import { LOG_LEVEL, LOG_TYPES } from './constants';
 import { isErrorStackMessage } from './utils';
@@ -6,10 +6,10 @@ import type { Options, LogMessage, LogFunction } from './types';
 
 type Keys = keyof typeof LOG_TYPES;
 
-export const createLogger = (options: Options = {}) => {
-  const maxLevel = options.level || 'log';
+export let createLogger = (options: Options = {}) => {
+  let maxLevel = options.level || 'log';
 
-  const log = (type: Keys, message?: LogMessage, ...args: string[]) => {
+  let log = (type: Keys, message?: LogMessage, ...args: string[]) => {
     if (LOG_LEVEL[LOG_TYPES[type].level] > LOG_LEVEL[maxLevel]) {
       return;
     }
@@ -19,7 +19,7 @@ export const createLogger = (options: Options = {}) => {
       return;
     }
 
-    const logType = LOG_TYPES[type];
+    let logType = LOG_TYPES[type];
 
     let label = '';
 
@@ -32,7 +32,7 @@ export const createLogger = (options: Options = {}) => {
 
     if (message instanceof Error) {
       if (message.stack) {
-        const [name, ...rest] = message.stack.split('\n');
+        let [name, ...rest] = message.stack.split('\n');
         text = `${name.replace('Error: ', '')}\n${color.gray(rest.join('\n'))}`;
       } else {
         text = message.message;
@@ -40,7 +40,7 @@ export const createLogger = (options: Options = {}) => {
     }
     // change the color of error stacks to gray
     else if (logType.level === 'error' && typeof message === 'string') {
-      const lines = message.split('\n');
+      let lines = message.split('\n');
       text = lines
         .map(line => (isErrorStackMessage(line) ? color.gray(line) : line))
         .join('\n');
@@ -48,7 +48,7 @@ export const createLogger = (options: Options = {}) => {
       text = `${message}`;
     }
 
-    const log = label.length ? `${label} ${text}` : text;
+    let log = label.length ? `${label} ${text}` : text;
 
     console.log(log, ...args);
   };
@@ -57,7 +57,7 @@ export const createLogger = (options: Options = {}) => {
     greet: (message: string) => void;
   };
 
-  const logger = {
+  let logger = {
     greet: (message: string) => log('log', gradient(message)),
   } as Logger;
 
