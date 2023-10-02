@@ -2,7 +2,7 @@
 
 A tiny, intuitive, type-friendly logger for Node.js.
 
-- **Tiny**. 1.5kB gzipped.
+- **Tiny**. 1kB gzipped.
 - **Clean**. Zero dependencies.
 - **Intuitive**. Clear log prefix.
 - **Type-friendly**. Written in TypeScript.

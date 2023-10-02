@@ -2,7 +2,7 @@ import type { ColorFn } from './color';
 
 export type LogLevel = 'error' | 'warn' | 'info' | 'log' | 'verbose';
 
-export type LogMessage = number | string | Error | null;
+export type LogMessage = number | string | unknown | Error | null;
 
 export interface LogType {
   label?: string;
