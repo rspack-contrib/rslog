@@ -1,7 +1,7 @@
-import color from 'picocolors';
+import { color } from './color';
 import type { LogType } from './types';
 
-export const LOG_LEVEL = {
+export let LOG_LEVEL = {
   error: 0,
   warn: 1,
   info: 2,
@@ -9,7 +9,7 @@ export const LOG_LEVEL = {
   verbose: 4,
 } as const;
 
-export const LOG_TYPES = {
+export let LOG_TYPES = {
   // Level error
   error: {
     label: 'error',

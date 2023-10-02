@@ -98,3 +98,7 @@ The log levels of each method are as follows:
 | info    | `info`, `start`, `ready`, `success` |
 | log     | `log`                               |
 | verbose | `debug`                             |
+
+## Credits
+
+The color implementation of Rslog are modified from [alexeyraspopov/picocolors](https://github.com/alexeyraspopov/picocolors).
