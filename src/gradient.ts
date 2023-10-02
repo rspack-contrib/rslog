@@ -6,7 +6,9 @@ let startColor = [189, 255, 243];
 // RGB for #4ac29a
 let endColor = [74, 194, 154];
 
-export function gradient(message: string) {
+let isWord = (char: string) => !/[\s\n]/.test(char);
+
+export let gradient = (message: string) => {
   if (!isColorSupported) {
     return message;
   }
@@ -14,20 +16,25 @@ export function gradient(message: string) {
   // split string and handle emoji correctly
   // https://stackoverflow.com/questions/24531751/how-can-i-split-a-string-containing-emoji-into-an-array
   let chars = [...message];
-  let steps = chars.length;
-  let colorStep = [
-    (endColor[0] - startColor[0]) / steps,
-    (endColor[1] - startColor[1]) / steps,
-    (endColor[2] - startColor[2]) / steps,
-  ];
-
+  let steps = chars.filter(isWord).length;
+  let r = startColor[0];
+  let g = startColor[1];
+  let b = startColor[2];
+  let rStep = (endColor[0] - r) / steps;
+  let gStep = (endColor[1] - g) / steps;
+  let bStep = (endColor[2] - b) / steps;
   let output = '';
-  for (let i = 0; i < steps; i++) {
-    let r = Math.round(startColor[0] + colorStep[0] * i);
-    let g = Math.round(startColor[1] + colorStep[1] * i);
-    let b = Math.round(startColor[2] + colorStep[2] * i);
-    output += `\x1b[38;2;${r};${g};${b}m${chars[i]}\x1b[39m`;
+
+  for (let char of chars) {
+    if (isWord(char)) {
+      r += rStep;
+      g += gStep;
+      b += bStep;
+    }
+    output += `\x1b[38;2;${Math.round(r)};${Math.round(g)};${Math.round(
+      b,
+    )}m${char}\x1b[39m`;
   }
 
   return bold(output);
-}
+};
