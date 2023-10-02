@@ -1,4 +1,4 @@
-import { color } from './color';
+import { bold, gray } from './color';
 import { gradient } from './gradient';
 import { LOG_LEVEL, LOG_TYPES } from './constants';
 import { isErrorStackMessage } from './utils';
@@ -25,7 +25,7 @@ export let createLogger = (options: Options = {}) => {
 
     if ('label' in logType) {
       label = (logType.label || '').padEnd(7);
-      label = color.bold(logType.color ? logType.color(label) : label);
+      label = bold(logType.color ? logType.color(label) : label);
     }
 
     let text = '';
@@ -33,16 +33,16 @@ export let createLogger = (options: Options = {}) => {
     if (message instanceof Error) {
       if (message.stack) {
         let [name, ...rest] = message.stack.split('\n');
-        text = `${name.replace('Error: ', '')}\n${color.gray(rest.join('\n'))}`;
+        text = `${name.replace('Error: ', '')}\n${(gray(rest.join('\n')))}`;
       } else {
         text = message.message;
       }
     }
-    // change the color of error stacks to gray
+    // change the color of error stacks to 
     else if (logType.level === 'error' && typeof message === 'string') {
       let lines = message.split('\n');
       text = lines
-        .map(line => (isErrorStackMessage(line) ? color.gray(line) : line))
+        .map(line => (isErrorStackMessage(line) ? gray(line) : line))
         .join('\n');
     } else {
       text = `${message}`;

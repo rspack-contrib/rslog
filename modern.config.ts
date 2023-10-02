@@ -7,7 +7,7 @@ export default defineConfig({
   buildPreset: 'npm-library',
   buildConfig: {
     target: 'es2019',
-    minify: 'terser',
+    minify: 'esbuild',
     esbuildOptions: options => {
       if (options.format === 'esm') {
         options.outExtension = { '.js': '.mjs' };
