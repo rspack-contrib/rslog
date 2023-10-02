@@ -15,30 +15,27 @@ export let createLogger = (options: Options = {}) => {
     }
 
     if (message === undefined || message === null) {
-      console.log();
-      return;
+      return console.log();
     }
 
     let logType = LOG_TYPES[type];
-
     let label = '';
+    let text = '';
 
     if ('label' in logType) {
       label = (logType.label || '').padEnd(7);
       label = bold(logType.color ? logType.color(label) : label);
     }
 
-    let text = '';
-
     if (message instanceof Error) {
       if (message.stack) {
         let [name, ...rest] = message.stack.split('\n');
-        text = `${name.replace('Error: ', '')}\n${(gray(rest.join('\n')))}`;
+        text = `${name.replace('Error: ', '')}\n${gray(rest.join('\n'))}`;
       } else {
         text = message.message;
       }
     }
-    // change the color of error stacks to 
+    // change the color of error stacks to
     else if (logType.level === 'error' && typeof message === 'string') {
       let lines = message.split('\n');
       text = lines
@@ -48,9 +45,7 @@ export let createLogger = (options: Options = {}) => {
       text = `${message}`;
     }
 
-    let log = label.length ? `${label} ${text}` : text;
-
-    console.log(log, ...args);
+    console.log(label.length ? `${label} ${text}` : text, ...args);
   };
 
   type Logger = Record<Keys, LogFunction> & {

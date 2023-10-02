@@ -1,6 +1,6 @@
 {
   "name": "rslog",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.5",
   "types": "./dist/types/index.d.ts",
   "main": "./dist/lib/index.js",
   "module": "./dist/es/index.mjs",

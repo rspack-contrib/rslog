@@ -2,15 +2,16 @@ import { isColorSupported } from './utils';
 
 export type ColorFn = (input: string | number | null | undefined) => string;
 
-let formatter =
-  (open: string, close: string, replace = open): ColorFn =>
-  input => {
-    let string = '' + input;
-    let index = string.indexOf(close, open.length);
-    return ~index
-      ? open + replaceClose(string, close, replace, index) + close
-      : open + string + close;
-  };
+let formatter = (open: string, close: string, replace = open): ColorFn =>
+  isColorSupported
+    ? input => {
+        let string = '' + input;
+        let index = string.indexOf(close, open.length);
+        return ~index
+          ? open + replaceClose(string, close, replace, index) + close
+          : open + string + close;
+      }
+    : String;
 
 let replaceClose = (
   string: string,
@@ -26,24 +27,10 @@ let replaceClose = (
     : start + end;
 };
 
-export const bold = isColorSupported
-  ? formatter('\x1b[1m', '\x1b[22m', '\x1b[22m\x1b[1m')
-  : String;
-export const red = isColorSupported
-  ? formatter('\x1b[31m', '\x1b[39m')
-  : String;
-export const green = isColorSupported
-  ? formatter('\x1b[32m', '\x1b[39m')
-  : String;
-export const yellow = isColorSupported
-  ? formatter('\x1b[33m', '\x1b[39m')
-  : String;
-export const magenta = isColorSupported
-  ? formatter('\x1b[35m', '\x1b[39m')
-  : String;
-export const cyan = isColorSupported
-  ? formatter('\x1b[36m', '\x1b[39m')
-  : String;
-export const gray = isColorSupported
-  ? formatter('\x1b[90m', '\x1b[39m')
-  : String;
+export const bold = formatter('\x1b[1m', '\x1b[22m', '\x1b[22m\x1b[1m');
+export const red = formatter('\x1b[31m', '\x1b[39m');
+export const green = formatter('\x1b[32m', '\x1b[39m');
+export const yellow = formatter('\x1b[33m', '\x1b[39m');
+export const magenta = formatter('\x1b[35m', '\x1b[39m');
+export const cyan = formatter('\x1b[36m', '\x1b[39m');
+export const gray = formatter('\x1b[90m', '\x1b[39m');
