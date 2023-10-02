@@ -2,7 +2,7 @@
 
 A tiny, intuitive, type-friendly logger for Node.js.
 
-- **Tiny**. 1kB gzipped.
+- **Tiny**. [~1kB gzipped](https://bundlephobia.com/package/rslog@1).
 - **Clean**. Zero dependencies.
 - **Intuitive**. Clear log prefix.
 - **Type-friendly**. Written in TypeScript.
