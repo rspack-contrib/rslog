@@ -1,5 +1,5 @@
-import { bold } from './color';
-import { isColorSupported } from './utils';
+import { bold, cyan } from './color';
+import { colorLevel } from './utils';
 
 // RGB for #bdfff3
 let startColor = [189, 255, 243];
@@ -9,8 +9,8 @@ let endColor = [74, 194, 154];
 let isWord = (char: string) => !/[\s\n]/.test(char);
 
 export let gradient = (message: string) => {
-  if (!isColorSupported) {
-    return message;
+  if (colorLevel < 3) {
+    return colorLevel === 2 ? bold(cyan(message)) : message;
   }
 
   // split string and handle emoji correctly

@@ -1,9 +1,9 @@
-import { isColorSupported } from './utils';
+import { colorLevel } from './utils';
 
 export type ColorFn = (input: string | number | null | undefined) => string;
 
 let formatter = (open: string, close: string, replace = open): ColorFn =>
-  isColorSupported
+  colorLevel >= 2
     ? input => {
         let string = '' + input;
         let index = string.indexOf(close, open.length);
