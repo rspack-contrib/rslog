@@ -89,6 +89,12 @@ logger.info('This is a info message');
 logger.log('This is a log message');
 ```
 
+You can also directly modify the level attribute of the logger instance:
+
+```js
+logger.level = 'debug';
+```
+
 The log levels of each method are as follows:
 
 | Level   | Method                              |
