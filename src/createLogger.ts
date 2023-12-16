@@ -54,5 +54,12 @@ export let createLogger = (options: Options = {}) => {
     logger[key] = (...args) => log(key, ...args);
   });
 
+  Object.defineProperty(logger, 'level', {
+    get: () => maxLevel,
+    set(val) {
+      maxLevel = val;
+    },
+  });
+
   return logger;
 };
