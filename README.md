@@ -92,7 +92,7 @@ logger.log('This is a log message');
 You can also directly modify the level attribute of the logger instance:
 
 ```js
-logger.level = 'debug';
+logger.level = 'verbose';
 ```
 
 The log levels of each method are as follows:
