@@ -9,3 +9,4 @@ logger.ready('This is a ready message');
 logger.success('This is a success message');
 logger.error('This is a error message');
 logger.error(new Error('This is a error message with stack'));
+logger.error(new TypeError('This is a type error with stack'));

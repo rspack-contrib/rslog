@@ -28,7 +28,10 @@ export let createLogger = (options: Options = {}) => {
     if (message instanceof Error) {
       if (message.stack) {
         let [name, ...rest] = message.stack.split('\n');
-        text = `${name.replace('Error: ', '')}\n${gray(rest.join('\n'))}`;
+        if (name.startsWith('Error: ')) {
+          name = name.slice(7);
+        }
+        text = `${name}\n${gray(rest.join('\n'))}`;
       } else {
         text = message.message;
       }
