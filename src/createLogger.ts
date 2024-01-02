@@ -64,5 +64,9 @@ export let createLogger = (options: Options = {}) => {
     },
   });
 
+  logger.override = customLogger => {
+    Object.assign(logger, customLogger);
+  };
+
   return logger;
 };

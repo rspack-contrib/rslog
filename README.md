@@ -2,7 +2,7 @@
 
 A tiny, intuitive, type-friendly logger for Node.js.
 
-- **Tiny**. [1.9kB gzipped](https://bundlephobia.com/package/rslog@1).
+- **Tiny**. [2kB gzipped](https://bundlephobia.com/package/rslog@1).
 - **Clean**. Zero dependencies.
 - **Intuitive**. Clear log prefix.
 - **Type-friendly**. Written in TypeScript.
@@ -76,7 +76,7 @@ logger.log('This is a log message');
 You can create a new logger instance through `createLogger` and specify the log level:
 
 ```js
-const { createLogger } = require('rslog');
+import { createLogger } from 'rslog';
 
 const logger = createLogger({ level: 'warn' });
 
@@ -104,6 +104,29 @@ The log levels of each method are as follows:
 | info    | `info`, `start`, `ready`, `success` |
 | log     | `log`                               |
 | verbose | `debug`                             |
+
+## Override
+
+You can use `logger.override` to override some or all methods of the default logger.
+
+```js
+import { logger } from 'rslog';
+
+logger.override({
+  log: message => {
+    console.log(`[LOG] ${message}`);
+  },
+  info: message => {
+    console.log(`[INFO] ${message}`);
+  },
+  warn: message => {
+    console.log(`[WARN] ${message}`);
+  },
+  error: message => {
+    console.log(`[ERROR] ${message}`);
+  },
+});
+```
 
 ## Environment
 
