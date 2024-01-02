@@ -1,4 +1,4 @@
-import { logger } from './dist/index.mjs';
+import { logger } from './dist/index';
 
 logger.greet(`\n➜ Rslog v1.0.0\n`);
 logger.info('This is a info message');
