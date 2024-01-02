@@ -3,7 +3,7 @@ import type { LOG_TYPES } from './constants';
 
 export type LogLevel = 'error' | 'warn' | 'info' | 'log' | 'verbose';
 
-export type LogMessage = number | string | unknown | Error | null;
+export type LogMessage = unknown;
 
 export interface LogType {
   label?: string;
@@ -22,4 +22,5 @@ export type LogMethods = keyof typeof LOG_TYPES;
 export type Logger = Record<LogMethods, LogFunction> & {
   greet: (message: string) => void;
   level: LogLevel;
+  override: (customLogger: Partial<Record<LogMethods, LogFunction>>) => void;
 };
