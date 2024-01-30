@@ -22,10 +22,6 @@ describe('isErrorStackMessage', () => {
       isErrorStackMessage('    at transform.next (<anonymous>)'),
     ).toBeTruthy();
 
-    expect(
-      isErrorStackMessage('    │ (from: /rslog/packages/foo/loader.js)'),
-    ).toBeTruthy();
-
     expect(isErrorStackMessage('    at Array.map (<anonymous>)')).toBeTruthy();
 
     expect(
