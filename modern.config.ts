@@ -7,7 +7,7 @@ export default defineConfig({
   buildConfig: [
     {
       format: 'cjs',
-      target: 'es2019',
+      target: 'es2021',
       buildType: 'bundle',
       outDir: './dist',
       esbuildOptions: options => {
@@ -18,7 +18,7 @@ export default defineConfig({
     },
     {
       format: 'esm',
-      target: 'es2019',
+      target: 'es2021',
       buildType: 'bundle',
       outDir: './dist',
       esbuildOptions: options => {
