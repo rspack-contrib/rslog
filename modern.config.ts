@@ -1,14 +1,13 @@
 import { moduleTools, defineConfig } from '@modern-js/module-tools';
 import { testingPlugin } from '@modern-js/plugin-testing';
-import path from 'path';
+import path from 'node:path';
 
 export default defineConfig({
   plugins: [moduleTools(), testingPlugin()],
   buildConfig: [
     {
       format: 'cjs',
-      target: 'es2019',
-      minify: 'esbuild',
+      target: 'es2021',
       buildType: 'bundle',
       outDir: './dist',
       esbuildOptions: options => {
@@ -19,8 +18,7 @@ export default defineConfig({
     },
     {
       format: 'esm',
-      target: 'es2019',
-      minify: 'esbuild',
+      target: 'es2021',
       buildType: 'bundle',
       outDir: './dist',
       esbuildOptions: options => {
