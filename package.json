@@ -1,6 +1,6 @@
 {
   "name": "rslog",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
