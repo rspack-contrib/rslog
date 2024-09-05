@@ -28,5 +28,15 @@ describe('isErrorStackMessage', () => {
     expect(
       isErrorStackMessage('    error   TypeError: foo.some is not a function'),
     ).toBeFalsy();
+
+    expect(
+      isErrorStackMessage('        │     at new Promise (<anonymous>)'),
+    ).toBeTruthy();
+
+    expect(
+      isErrorStackMessage(
+        '        │     at runSyncOrAsync (node:internal/util:427:12)',
+      ),
+    ).toBeTruthy();
   });
 });
