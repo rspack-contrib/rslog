@@ -1,12 +1,22 @@
-import { bold, gray } from './color';
-import { gradient } from './gradient';
-import { LOG_LEVEL, LOG_TYPES } from './constants';
+import { LOG_LEVEL,  } from './constants';
 import { isErrorStackMessage } from './utils';
-import type { Options, LogMessage, Logger, LogMethods } from './types';
+import type { Options, LogMessage, Logger, LogMethods, LogTypes } from './types';
 
-export let createLogger = (options: Options = {}) => {
+import type { gradient as TGradient   } from './browser/gradient';
+import type { finalLog as TFinalLog  , getLabel as TGetLabel   } from './browser/utils';
+
+
+export let createLogger = (options: Options = {},{getLabel,handleError,finalLog,greet,LOG_TYPES}:{
+  LOG_TYPES:LogTypes;
+  getLabel:typeof TGetLabel;
+  finalLog:typeof TFinalLog;
+  gradient:typeof TGradient,
+  greet:(msg:string)=>unknown,
+  handleError:(msg:string)=>string,
+
+}) => {
   let maxLevel = options.level || 'log';
-
+  
   let log = (type: LogMethods, message?: LogMessage, ...args: string[]) => {
     if (LOG_LEVEL[LOG_TYPES[type].level] > LOG_LEVEL[maxLevel]) {
       return;
@@ -17,13 +27,9 @@ export let createLogger = (options: Options = {}) => {
     }
 
     let logType = LOG_TYPES[type];
-    let label = '';
     let text = '';
 
-    if ('label' in logType) {
-      label = (logType.label || '').padEnd(7);
-      label = bold(logType.color ? logType.color(label) : label);
-    }
+    const label = getLabel(logType);
 
     if (message instanceof Error) {
       if (message.stack) {
@@ -31,7 +37,7 @@ export let createLogger = (options: Options = {}) => {
         if (name.startsWith('Error: ')) {
           name = name.slice(7);
         }
-        text = `${name}\n${gray(rest.join('\n'))}`;
+        text = `${name}\n${handleError(rest.join('\n'))}`;
       } else {
         text = message.message;
       }
@@ -40,17 +46,18 @@ export let createLogger = (options: Options = {}) => {
     else if (logType.level === 'error' && typeof message === 'string') {
       let lines = message.split('\n');
       text = lines
-        .map(line => (isErrorStackMessage(line) ? gray(line) : line))
+        .map(line => (isErrorStackMessage(line) ? handleError(line) : line))
         .join('\n');
     } else {
       text = `${message}`;
     }
 
-    console.log(label.length ? `${label} ${text}` : text, ...args);
+    finalLog(label, text, args,message)
   };
 
   let logger = {
-    greet: (message: string) => log('log', gradient(message)),
+    // greet
+    greet: (message: string) => log('log', greet(message)),
   } as Logger;
 
   (Object.keys(LOG_TYPES) as LogMethods[]).forEach(key => {

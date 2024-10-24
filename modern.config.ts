@@ -7,27 +7,32 @@ export default defineConfig({
       format: 'cjs',
       target: 'es2021',
       buildType: 'bundle',
-      outDir: './dist',
+      input:['./src/browser/index.ts'],
+      outDir: './dist/browser',
       esbuildOptions: options => {
         options.outExtension = { '.js': '.cjs' };
         return options;
       },
       dts: false,
     },
+
     {
-      format: 'esm',
+      format: 'cjs',
       target: 'es2021',
       buildType: 'bundle',
-      outDir: './dist',
+      outDir: './dist/node',
+      input:['./src/node/index.ts'],
       esbuildOptions: options => {
-        options.outExtension = { '.js': '.mjs' };
+        options.outExtension = { '.js': '.cjs' };
         return options;
       },
       dts: false,
     },
+
     {
       buildType: 'bundle',
       outDir: './dist',
+      input:['./src/node/index.ts'],
       dts: {
         only: true,
       },

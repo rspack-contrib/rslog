@@ -1,16 +1,9 @@
 {
-  "name": "rslog",
-  "version": "1.2.3",
+  "name": "isomorphic-rslog",
+  "version": "0.0.0-1729784134655",
   "types": "./dist/index.d.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
-  },
+  "browser": "./dist/browser/index.cjs",
+  "main": "./dist/node/index.cjs",
   "files": [
     "dist"
   ],

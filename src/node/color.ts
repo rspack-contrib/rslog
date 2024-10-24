@@ -1,6 +1,5 @@
 import { colorLevel } from './utils';
-
-export type ColorFn = (input: string | number | null | undefined) => string;
+import type { ColorFn} from '../types'
 
 let formatter = (open: string, close: string, replace = open): ColorFn =>
   colorLevel >= 2
@@ -8,10 +7,12 @@ let formatter = (open: string, close: string, replace = open): ColorFn =>
         let string = '' + input;
         let index = string.indexOf(close, open.length);
         return ~index
-          ? open + replaceClose(string, close, replace, index) + close
-          : open + string + close;
+          ? [open + replaceClose(string, close, replace, index) + close]
+          : [open + string + close];
       }
-    : String;
+    : input=>{
+      return [String(input)]
+    } ;
 
 let replaceClose = (
   string: string,
