@@ -16,6 +16,7 @@ export let createLogger = (options: Options = {},{getLabel,handleError,finalLog,
 
 }) => {
   let maxLevel = options.level || 'log';
+  const customLabels = options.labels || {};
   
   let log = (type: LogMethods, message?: LogMessage, ...args: string[]) => {
     if (LOG_LEVEL[LOG_TYPES[type].level] > LOG_LEVEL[maxLevel]) {
@@ -29,7 +30,7 @@ export let createLogger = (options: Options = {},{getLabel,handleError,finalLog,
     let logType = LOG_TYPES[type];
     let text = '';
 
-    const label = getLabel(logType);
+    const label = getLabel(type,logType,customLabels);
 
     if (message instanceof Error) {
       if (message.stack) {
@@ -42,8 +43,10 @@ export let createLogger = (options: Options = {},{getLabel,handleError,finalLog,
         text = message.message;
       }
     }
+
     // change the color of error stacks to
     else if (logType.level === 'error' && typeof message === 'string') {
+
       let lines = message.split('\n');
       text = lines
         .map(line => (isErrorStackMessage(line) ? handleError(line) : line))

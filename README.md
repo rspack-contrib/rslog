@@ -1,8 +1,8 @@
-# Rslog
+# isomorphic-rslog
 
-A tiny, intuitive, type-friendly logger for Node.js.
+A tiny, intuitive, type-friendly logger for Node.js/Browser.
 
-- **Tiny**. [2kB gzipped](https://bundlephobia.com/package/rslog@1).
+- **Tiny**. [1.5kB gzipped](https://bundlephobia.com/package/isomorphic-rslog@1).
 - **Clean**. Zero dependencies.
 - **Intuitive**. Clear log prefix.
 - **Type-friendly**. Written in TypeScript.
@@ -15,16 +15,16 @@ A tiny, intuitive, type-friendly logger for Node.js.
 
 ```bash
 # with npm
-npm add rslog
+npm add isomorphic-rslog
 
 # with yarn
-yarn add rslog
+yarn add isomorphic-rslog
 
 # with pnpm
-pnpm add rslog
+pnpm add isomorphic-rslog
 
 # with bun
-bun add rslog
+bun add isomorphic-rslog
 ```
 
 ## Usage
@@ -33,10 +33,10 @@ bun add rslog
 
 ```js
 // with require
-const { logger } = require('rslog');
+const { logger } = require('isomorphic-rslog');
 
 // with import
-import { logger } from 'rslog';
+import { logger } from 'isomorphic-rslog';
 ```
 
 - Log:
@@ -76,7 +76,7 @@ logger.log('This is a log message');
 You can create a new logger instance through `createLogger` and specify the log level:
 
 ```js
-import { createLogger } from 'rslog';
+import { createLogger } from 'isomorphic-rslog';
 
 const logger = createLogger({ level: 'warn' });
 
@@ -105,12 +105,41 @@ The log levels of each method are as follows:
 | log     | `log`                               |
 | verbose | `debug`                             |
 
+## Label Prefix
+
+You can create a new logger instance through `createLogger` and specify the label prefix:
+
+```js
+import { createLogger } from 'isomorphic-rslog';
+
+const logger = createLogger({ level: 'warn' });
+
+const logger = createLogger({
+  labels:{
+    warn:'[ Prefix ] Warn',
+    error:'[ Prefix ] Error',
+    success:'[ Prefix ] Success',
+    info:'[ Prefix ] Info',
+    log:'[ Prefix ] Log',
+    ready:'[ Prefix ] Ready',
+    debug:'[ Prefix ] Debug',
+  }
+});
+
+  logger.log('this is a log message');
+  logger.info('this is an info message');
+  logger.warn('this is a warn message');
+  logger.ready('this is a ready message');
+  logger.debug('this is a debug message');
+  logger.success('this is a success message');
+```
+
 ## Override
 
 You can use `logger.override` to override some or all methods of the default logger.
 
 ```js
-import { logger } from 'rslog';
+import { logger } from 'isomorphic-rslog';
 
 logger.override({
   log: message => {
@@ -130,14 +159,16 @@ logger.override({
 
 ## Environment
 
-Rslog provides both CommonJS and ESModule output and supports Node.js >= 14.
+`isomorphic-rslog` provides both CommonJS and ESModule output and supports Node.js >= 14.
 
 ## Credits
 
-Rslog is built with [Modern.js](https://github.com/web-infra-dev/modern.js).
+`isomorphic-rslog` is fork from [rslog](https://github.com/rspack-contrib/rslog).
 
-The color implementation of Rslog are modified from [alexeyraspopov/picocolors](https://github.com/alexeyraspopov/picocolors).
+`isomorphic-rslog` is built with [Modern.js](https://github.com/web-infra-dev/modern.js).
+
+The color implementation of `isomorphic-rslog` are modified from [alexeyraspopov/picocolors](https://github.com/alexeyraspopov/picocolors).
 
 ## License
 
-Rslog is [MIT licensed](https://github.com/rspack-contrib/rslog/blob/main/LICENSE).
+`isomorphic-rslog` is [MIT licensed](https://github.com/rspack-contrib/rslog/blob/main/LICENSE).

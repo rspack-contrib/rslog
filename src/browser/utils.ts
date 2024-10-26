@@ -1,10 +1,10 @@
-import type{LogMessage, LogType} from '../types'
+import type{Labels, LogMessage, LogMethods, LogType} from '../types'
 import { bold } from './color';
 
-export function getLabel(logType: LogType){
+export function getLabel(type:LogMethods,logType: LogType,labels:Labels){
   let label = [''];
   if ('label' in logType) {
-    label = [(logType.label || '')];
+    label = [(labels[type] || logType.label || '')];
     label = bold(logType.color ? logType.color(label as [string,string]) as [string,string] : label[0]);
   }
   label = label.filter(Boolean)

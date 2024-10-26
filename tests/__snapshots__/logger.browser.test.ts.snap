@@ -1,0 +1,120 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`logger > should create new logger with info level correctly 1`] = `
+[
+  [
+    "%cerror",
+    "font-weight: bold;color: red;",
+    "this is a error message",
+  ],
+  [
+    "%cinfo",
+    "font-weight: bold;color: cyan;",
+    "this is an info message",
+  ],
+  [
+    "%cwarn",
+    "font-weight: bold;color: yellow;",
+    "this is a warn message",
+  ],
+  [
+    "%cready",
+    "font-weight: bold;color: green;",
+    "this is a ready message",
+  ],
+  [
+    "%csuccess",
+    "font-weight: bold;color: green;",
+    "this is a success message",
+  ],
+]
+`;
+
+exports[`logger > should create new logger with warn level correctly 1`] = `
+[
+  [
+    "%cerror",
+    "font-weight: bold;color: red;",
+    "this is a error message",
+  ],
+  [
+    "%cwarn",
+    "font-weight: bold;color: yellow;",
+    "this is a warn message",
+  ],
+]
+`;
+
+exports[`logger > should log as expected 1`] = `
+[
+  [
+    "%c😊 %cR%cs%cl%co%cg %cv%c1%c.%c0%c.%c0
+",
+    "color: rgb(189,255,243); font-weight: bold;",
+    "color: rgb(179,249,235); font-weight: bold;",
+    "color: rgb(168,244,227); font-weight: bold;",
+    "color: rgb(158,238,219); font-weight: bold;",
+    "color: rgb(147,233,211); font-weight: bold;",
+    "color: rgb(137,227,203); font-weight: bold;",
+    "color: rgb(126,222,194); font-weight: bold;",
+    "color: rgb(116,216,186); font-weight: bold;",
+    "color: rgb(105,211,178); font-weight: bold;",
+    "color: rgb(95,205,170); font-weight: bold;",
+    "color: rgb(105,211,178); font-weight: bold;",
+    "color: rgb(95,205,170); font-weight: bold;",
+  ],
+  [
+    "this is a log message",
+  ],
+  [
+    "%cinfo",
+    "font-weight: bold;color: cyan;",
+    "this is an info message",
+  ],
+  [
+    "%cwarn",
+    "font-weight: bold;color: yellow;",
+    "this is a warn message",
+  ],
+  [
+    "%cready",
+    "font-weight: bold;color: green;",
+    "this is a ready message",
+  ],
+  [
+    "%csuccess",
+    "font-weight: bold;color: green;",
+    "this is a success message",
+  ],
+]
+`;
+
+exports[`logger > should log error with stack correctly 1`] = `"%cerror"`;
+
+exports[`logger > use custom labels if the value is passed 1`] = `
+[
+  [
+    "this is a log message",
+  ],
+  [
+    "%c[ Prefix ] Info",
+    "font-weight: bold;color: cyan;",
+    "this is an info message",
+  ],
+  [
+    "%c[ Prefix ] Warn",
+    "font-weight: bold;color: yellow;",
+    "this is a warn message",
+  ],
+  [
+    "%c[ Prefix ] Ready",
+    "font-weight: bold;color: green;",
+    "this is a ready message",
+  ],
+  [
+    "%c[ Prefix ] Success",
+    "font-weight: bold;color: green;",
+    "this is a success message",
+  ],
+]
+`;

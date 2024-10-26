@@ -13,9 +13,13 @@ export interface LogType {
 
 export type LogTypes = Record<string, LogType>
 export type LogFunction = (message?: LogMessage, ...args: any[]) => void;
+export type Labels = {
+  [key in LogMethods]?: string;
+}
 
 export interface Options {
   level?: LogLevel;
+  labels?: Labels;
 }
 
 export type LogMethods = keyof typeof LOG_TYPES;
