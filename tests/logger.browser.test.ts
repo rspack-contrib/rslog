@@ -1,8 +1,8 @@
-import { createLogger, logger } from '../src';
+import { createLogger, logger } from '../src/browser';
 import { join } from 'path';
 import { expect, test, describe, vi, Mock } from 'vitest';
 
-const root = join(__dirname, '..');
+const root = join(__dirname, '../');
 
 expect.addSnapshotSerializer({
   test: val => typeof val === 'string' && val.includes(root),
@@ -68,5 +68,30 @@ describe('logger', () => {
     logger.error(new Error('this is an error message'));
 
     expect((console.log as Mock).mock.calls[0][0]).toMatchSnapshot();
+  });
+
+  test('use custom labels if the value is passed', () => {
+    console.log = vi.fn();
+    const logger = createLogger({
+      labels:{
+        warn:'[ Prefix ] Warn',
+        error:'[ Prefix ] Error',
+        success:'[ Prefix ] Success',
+        info:'[ Prefix ] Info',
+        log:'[ Prefix ] Log',
+        ready:'[ Prefix ] Ready',
+        debug:'[ Prefix ] Debug',
+      }
+    });
+
+
+    logger.log('this is a log message');
+    logger.info('this is an info message');
+    logger.warn('this is a warn message');
+    logger.ready('this is a ready message');
+    logger.debug('this is a debug message');
+    logger.success('this is a success message');
+
+    expect((console.log as Mock).mock.calls).toMatchSnapshot();
   });
 });

@@ -1,4 +1,5 @@
 import { isErrorStackMessage } from '../src/utils';
+
 import { expect, test, describe } from 'vitest';
 
 describe('isErrorStackMessage', () => {

@@ -1,16 +1,10 @@
 {
-  "name": "rslog",
-  "version": "1.2.3",
+  "name": "isomorphic-rslog",
+  "version": "0.0.1",
   "types": "./dist/index.d.ts",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
-  },
+  "author": "hanric <hanric.zhang@gmail.com>",
+  "browser": "./dist/browser/index.cjs",
+  "main": "./dist/node/index.cjs",
   "files": [
     "dist"
   ],
@@ -21,25 +15,27 @@
     "build": "modern build",
     "build:watch": "modern build -w",
     "reset": "rimraf ./**/node_modules",
-    "test": "vitest"
+    "test": "npm run test:node && npm run test:browser",
+    "test:node": "vitest -c vitest.node.config.ts",
+    "test:browser": "vitest -c vitest.browser.config.ts"
   },
   "engines": {
     "node": ">=14.17.6"
   },
-  "packageManager": "pnpm@8.8.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rspack-contrib/rslog.git"
+    "url": "https://github.com/2heal1/isomorphic-rslog.git"
   },
   "devDependencies": {
     "@modern-js/module-tools": "2.46.1",
     "@modern-js/tsconfig": "2.46.1",
     "@types/node": "~16.11.7",
+    "jsdom": "^25.0.1",
     "prettier": "~2.8.1",
     "rimraf": "~3.0.2",
     "supports-color": "^9.4.0",
     "typescript": "~5.0.4",
-    "vitest": "^2.0.5"
+    "vitest": "2.0.5"
   },
   "publishConfig": {
     "access": "public",

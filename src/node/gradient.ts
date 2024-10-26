@@ -10,7 +10,7 @@ let isWord = (char: string) => !/[\s\n]/.test(char);
 
 export let gradient = (message: string) => {
   if (colorLevel < 3) {
-    return colorLevel === 2 ? bold(cyan(message)) : message;
+    return colorLevel === 2 ? bold(cyan(message)[0]) : [message];
   }
 
   // split string and handle emoji correctly
