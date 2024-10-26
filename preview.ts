@@ -1,6 +1,6 @@
-import { logger } from './dist/index';
+import { logger } from './dist/node/index.cjs';
 
-logger.greet(`\n➜ Rslog v1.0.0\n`);
+logger.greet(`\n➜ isomorphic-rslog v0.0.1\n`);
 logger.info('This is a info message');
 logger.start('This is a start message');
 logger.warn('This is a warn message');
