@@ -1,23 +1,23 @@
-import { LOG_LEVEL,  } from './constants';
+import { LOG_LEVEL, } from './constants';
 import { isErrorStackMessage } from './utils';
 import type { Options, LogMessage, Logger, LogMethods, LogTypes } from './types';
 
-import type { gradient as TGradient   } from './browser/gradient';
-import type { finalLog as TFinalLog  , getLabel as TGetLabel   } from './browser/utils';
+import type { gradient as TGradient } from './browser/gradient';
+import type { finalLog as TFinalLog, getLabel as TGetLabel } from './browser/utils';
 
 
-export let createLogger = (options: Options = {},{getLabel,handleError,finalLog,greet,LOG_TYPES}:{
-  LOG_TYPES:LogTypes;
-  getLabel:typeof TGetLabel;
-  finalLog:typeof TFinalLog;
-  gradient:typeof TGradient,
-  greet:(msg:string)=>unknown,
-  handleError:(msg:string)=>string,
+export let createLogger = (options: Options = {}, { getLabel, handleError, finalLog, greet, LOG_TYPES }: {
+  LOG_TYPES: LogTypes;
+  getLabel: typeof TGetLabel;
+  finalLog: typeof TFinalLog;
+  gradient: typeof TGradient,
+  greet: (msg: string) => unknown,
+  handleError: (msg: string) => string,
 
 }) => {
   let maxLevel = options.level || 'log';
   const customLabels = options.labels || {};
-  
+
   let log = (type: LogMethods, message?: LogMessage, ...args: string[]) => {
     if (LOG_LEVEL[LOG_TYPES[type].level] > LOG_LEVEL[maxLevel]) {
       return;
@@ -30,7 +30,7 @@ export let createLogger = (options: Options = {},{getLabel,handleError,finalLog,
     let logType = LOG_TYPES[type];
     let text = '';
 
-    const label = getLabel(type,logType,customLabels);
+    const label = getLabel(type, logType, customLabels);
 
     if (message instanceof Error) {
       if (message.stack) {
@@ -55,7 +55,7 @@ export let createLogger = (options: Options = {},{getLabel,handleError,finalLog,
       text = `${message}`;
     }
 
-    finalLog(label, text, args,message)
+    finalLog(label, text, args, message)
   };
 
   let logger = {

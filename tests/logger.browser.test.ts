@@ -73,19 +73,17 @@ describe('logger', () => {
   test('use custom labels if the value is passed', () => {
     console.log = vi.fn();
     const logger = createLogger({
-      labels:{
-        warn:'[ Prefix ] Warn',
-        error:'[ Prefix ] Error',
-        success:'[ Prefix ] Success',
-        info:'[ Prefix ] Info',
-        log:'[ Prefix ] Log',
-        ready:'[ Prefix ] Ready',
-        debug:'[ Prefix ] Debug',
+      labels: {
+        warn: '[ Prefix ] Warn',
+        error: '[ Prefix ] Error',
+        success: '[ Prefix ] Success',
+        info: '[ Prefix ] Info',
+        ready: '[ Prefix ] Ready',
+        debug: '[ Prefix ] Debug',
       }
     });
 
 
-    logger.log('this is a log message');
     logger.info('this is an info message');
     logger.warn('this is a warn message');
     logger.ready('this is a ready message');

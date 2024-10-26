@@ -8,10 +8,13 @@ A tiny, intuitive, type-friendly logger for Node.js/Browser.
 - **Type-friendly**. Written in TypeScript.
 
 ## Preview
+
 ### Node.js
+
 <img width="564" alt="node" src="https://github.com/user-attachments/assets/16362210-4e36-4f64-8722-bd9e37e84729">
 
 ### Browser
+
 <img width="936" alt="browser" src="https://github.com/user-attachments/assets/4c17f94e-5760-497a-8d1d-33c8dd395fbc">
 
 ## Install
@@ -118,23 +121,21 @@ import { createLogger } from 'isomorphic-rslog';
 const logger = createLogger({ level: 'warn' });
 
 const logger = createLogger({
-  labels:{
-    warn:'[ Prefix ] Warn',
-    error:'[ Prefix ] Error',
-    success:'[ Prefix ] Success',
-    info:'[ Prefix ] Info',
-    log:'[ Prefix ] Log',
-    ready:'[ Prefix ] Ready',
-    debug:'[ Prefix ] Debug',
-  }
+  labels: {
+    warn: '[ Prefix ] Warn',
+    error: '[ Prefix ] Error',
+    success: '[ Prefix ] Success',
+    info: '[ Prefix ] Info',
+    ready: '[ Prefix ] Ready',
+    debug: '[ Prefix ] Debug',
+  },
 });
 
-  logger.log('this is a log message');
-  logger.info('this is an info message');
-  logger.warn('this is a warn message');
-  logger.ready('this is a ready message');
-  logger.debug('this is a debug message');
-  logger.success('this is a success message');
+logger.info('this is an info message');
+logger.warn('this is a warn message');
+logger.ready('this is a ready message');
+logger.debug('this is a debug message');
+logger.success('this is a success message');
 ```
 
 ## Override

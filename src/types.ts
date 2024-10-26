@@ -1,7 +1,7 @@
 import type { LOG_TYPES } from './node/constants';
 
 export type LogLevel = 'error' | 'warn' | 'info' | 'log' | 'verbose';
-export type ColorFn = (input: string | number | null | undefined | [label:string,style:string]) => string[];
+export type ColorFn = (input: string | number | null | undefined | [label: string, style: string]) => string[];
 
 export type LogMessage = unknown;
 
@@ -14,7 +14,7 @@ export interface LogType {
 export type LogTypes = Record<string, LogType>
 export type LogFunction = (message?: LogMessage, ...args: any[]) => void;
 export type Labels = {
-  [key in LogMethods]?: string;
+  [key in Exclude<LogMethods, 'log'>]?: string;
 }
 
 export interface Options {

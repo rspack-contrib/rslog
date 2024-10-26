@@ -1,19 +1,19 @@
 
-let supportsSubstitutions:boolean|undefined = undefined;
+let supportsSubstitutions: boolean | undefined = undefined;
 
-export const supportColor = ()=>{
-  if(typeof supportsSubstitutions!=='undefined'){
+export const supportColor = () => {
+  if (typeof supportsSubstitutions !== 'undefined') {
     return supportsSubstitutions;
   }
   try {
-    console.log('%c', 'color:');  
+    console.log('%c', 'color:');
     supportsSubstitutions = true;
   } catch (e) {
     supportsSubstitutions = false;
   }
   return supportsSubstitutions
 };
-export type ColorFn = (input: string | number | null | undefined| [label:string,style:string]) => string[];
+export type ColorFn = (input: string | number | null | undefined | [label: string, style: string]) => string[];
 
 const ansiToCss = {
   'bold': 'font-weight: bold;',
@@ -28,12 +28,12 @@ const ansiToCss = {
 let formatter = (key: keyof typeof ansiToCss): ColorFn =>
   supportColor()
     ? (input) => {
-        if(Array.isArray(input)){
-          const [label,style] = input;
-          return [`%c${label.replace('%c','')}`, style? `${ansiToCss[key]}${style}` : `${ansiToCss[key]|| '' }`];
-        }
-        return [`%c${String(input).replace('%c','')}`, ansiToCss[key] || ''];
+      if (Array.isArray(input)) {
+        const [label, style] = input;
+        return [`%c${label.replace('%c', '')}`, style ? `${ansiToCss[key]}${style}` : `${ansiToCss[key] || ''}`];
       }
+      return [`%c${String(input).replace('%c', '')}`, ansiToCss[key] || ''];
+    }
     : (input) => [String(input)];
 
 
