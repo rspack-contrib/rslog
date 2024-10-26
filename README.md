@@ -177,4 +177,4 @@ The color implementation of `isomorphic-rslog` are modified from [alexeyraspopov
 
 ## License
 
-`isomorphic-rslog` is [MIT licensed](https://github.com/rspack-contrib/rslog/blob/main/LICENSE).
+`isomorphic-rslog` is [MIT licensed](https://github.com/2heal1/isomorphic-rslog/blob/main/LICENSE).
