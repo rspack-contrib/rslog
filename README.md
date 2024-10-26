@@ -137,6 +137,8 @@ logger.ready('this is a ready message');
 logger.debug('this is a debug message');
 logger.success('this is a success message');
 ```
+<img width="393" alt="prefix" src="https://github.com/user-attachments/assets/d0d8f1c2-ca1c-4fdd-9b32-8e2ea7b54ea3">
+
 
 ## Override
 
