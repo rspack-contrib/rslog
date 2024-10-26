@@ -8,8 +8,11 @@ A tiny, intuitive, type-friendly logger for Node.js/Browser.
 - **Type-friendly**. Written in TypeScript.
 
 ## Preview
+### Node.js
+<img width="564" alt="node" src="https://github.com/user-attachments/assets/16362210-4e36-4f64-8722-bd9e37e84729">
 
-![Artboard](https://github.com/rspack-contrib/rslog/assets/7237365/9677ecb3-eff1-4c0e-9392-9b61b248fe5c)
+### Browser
+<img width="936" alt="browser" src="https://github.com/user-attachments/assets/4c17f94e-5760-497a-8d1d-33c8dd395fbc">
 
 ## Install
 
