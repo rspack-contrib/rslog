@@ -16,7 +16,7 @@ export let createLogger = (options: Options = {}, { getLabel, handleError, final
 
 }) => {
   let maxLevel = options.level || 'log';
-  const customLabels = options.labels || {};
+  let customLabels = options.labels || {};
 
   let log = (type: LogMethods, message?: LogMessage, ...args: string[]) => {
     if (LOG_LEVEL[LOG_TYPES[type].level] > LOG_LEVEL[maxLevel]) {
@@ -71,6 +71,13 @@ export let createLogger = (options: Options = {}, { getLabel, handleError, final
     get: () => maxLevel,
     set(val) {
       maxLevel = val;
+    },
+  });
+
+  Object.defineProperty(logger, 'labels', {
+    get: () => customLabels,
+    set(val) {
+      customLabels = val;
     },
   });
 
