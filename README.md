@@ -2,7 +2,7 @@
 
 A tiny, intuitive, type-friendly logger for Node.js/Browser.
 
-- **Tiny**. [1.5kB gzipped](https://bundlephobia.com/package/isomorphic-rslog@1).
+- **Tiny**. [1.5kB gzipped](https://bundlephobia.com/package/isomorphic-rslog@latest).
 - **Clean**. Zero dependencies.
 - **Intuitive**. Clear log prefix.
 - **Type-friendly**. Written in TypeScript.
