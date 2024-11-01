@@ -72,9 +72,6 @@ exports[`logger > should log error with stack correctly 1`] = `
 exports[`logger > use custom labels if the value is passed 1`] = `
 [
   [
-    "this is a log message",
-  ],
-  [
     "[1m[36m[ Prefix ] Info[39m[22m this is an info message",
   ],
   [

@@ -19,9 +19,9 @@ const ansiToCss = {
   'bold': 'font-weight: bold;',
   'red': 'color: red;',
   'green': 'color: green;',
-  'yellow': 'color: yellow;',
+  'orange': 'color: orange;',
+  'dodgerblue': 'color: dodgerblue;',
   'magenta': 'color: magenta;',
-  'cyan': 'color: cyan;',
   'gray': 'color: gray;',
 };
 
@@ -40,7 +40,7 @@ let formatter = (key: keyof typeof ansiToCss): ColorFn =>
 export const bold = formatter('bold');
 export const red = formatter('red');
 export const green = formatter('green');
-export const yellow = formatter('yellow');
+export const orange = formatter('orange');
+export const dodgerblue = formatter('dodgerblue');
 export const magenta = formatter('magenta');
-export const cyan = formatter('cyan');
 export const gray = formatter('gray');

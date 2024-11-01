@@ -1,5 +1,5 @@
 import type { LogType } from '../types';
-import { red, yellow, cyan, green, magenta } from './color';
+import { red, orange, green, magenta, dodgerblue } from './color';
 
 export let LOG_TYPES = {
   // Level error
@@ -12,18 +12,18 @@ export let LOG_TYPES = {
   warn: {
     label: 'warn',
     level: 'warn',
-    color: yellow,
+    color: orange,
   },
   // Level info
   info: {
     label: 'info',
     level: 'info',
-    color: cyan,
+    color: dodgerblue,
   },
   start: {
     label: 'start',
     level: 'info',
-    color: cyan,
+    color: dodgerblue,
   },
   ready: {
     label: 'ready',

@@ -9,12 +9,12 @@ exports[`logger > should create new logger with info level correctly 1`] = `
   ],
   [
     "%cinfo",
-    "font-weight: bold;color: cyan;",
+    "font-weight: bold;color: dodgerblue;",
     "this is an info message",
   ],
   [
     "%cwarn",
-    "font-weight: bold;color: yellow;",
+    "font-weight: bold;color: orange;",
     "this is a warn message",
   ],
   [
@@ -39,7 +39,7 @@ exports[`logger > should create new logger with warn level correctly 1`] = `
   ],
   [
     "%cwarn",
-    "font-weight: bold;color: yellow;",
+    "font-weight: bold;color: orange;",
     "this is a warn message",
   ],
 ]
@@ -68,12 +68,12 @@ exports[`logger > should log as expected 1`] = `
   ],
   [
     "%cinfo",
-    "font-weight: bold;color: cyan;",
+    "font-weight: bold;color: dodgerblue;",
     "this is an info message",
   ],
   [
     "%cwarn",
-    "font-weight: bold;color: yellow;",
+    "font-weight: bold;color: orange;",
     "this is a warn message",
   ],
   [
@@ -94,16 +94,13 @@ exports[`logger > should log error with stack correctly 1`] = `"%cerror"`;
 exports[`logger > use custom labels if the value is passed 1`] = `
 [
   [
-    "this is a log message",
-  ],
-  [
     "%c[ Prefix ] Info",
-    "font-weight: bold;color: cyan;",
+    "font-weight: bold;color: dodgerblue;",
     "this is an info message",
   ],
   [
     "%c[ Prefix ] Warn",
-    "font-weight: bold;color: yellow;",
+    "font-weight: bold;color: orange;",
     "this is a warn message",
   ],
   [
