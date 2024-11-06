@@ -6,8 +6,16 @@ export const supportColor = () => {
     return supportsSubstitutions;
   }
   try {
-    console.log('%c', 'color:');
-    supportsSubstitutions = true;
+    const testString = 'color test';
+    const css = 'color: red;';
+    const originalConsoleLog = console.log;
+    console.log = (...args) => {
+      if (args[0] === `%c${testString}` && args[1] === css) {
+        supportsSubstitutions = true;
+      }
+    };
+    console.log(`%c${testString}`, css);
+    console.log = originalConsoleLog;
   } catch (e) {
     supportsSubstitutions = false;
   }
