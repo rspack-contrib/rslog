@@ -2,24 +2,23 @@
   "name": "rslog",
   "version": "1.2.3",
   "types": "./dist/index.d.ts",
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.js"
     }
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "prepare": "modern build",
+    "prepare": "rslib build",
     "preview": "bun run ./preview.ts",
-    "dev": "modern dev",
-    "build": "modern build",
-    "build:watch": "modern build -w",
+    "build": "rslib build",
+    "dev": "rslib build --watch",
     "reset": "rimraf ./**/node_modules",
     "test": "vitest",
     "bump": "npx bumpp"
@@ -33,8 +32,8 @@
     "url": "https://github.com/rspack-contrib/rslog.git"
   },
   "devDependencies": {
-    "@modern-js/module-tools": "2.46.1",
     "@modern-js/tsconfig": "2.46.1",
+    "@rslib/core": "^0.0.16",
     "@types/node": "~16.11.7",
     "prettier": "~2.8.1",
     "rimraf": "~3.0.2",
