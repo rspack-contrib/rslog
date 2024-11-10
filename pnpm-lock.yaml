@@ -8,9 +8,6 @@ importers:
 
   .:
     devDependencies:
-      '@modern-js/tsconfig':
-        specifier: 2.46.1
-        version: 2.46.1
       '@rslib/core':
         specifier: ^0.0.16
         version: 0.0.16(typescript@5.0.4)
@@ -203,9 +200,6 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
-
-  '@modern-js/tsconfig@2.46.1':
-    resolution: {integrity: sha512-LaDAQwzy59X3QP5YR4iH3ZGlI3nUFhzQ7LLFMbbI6yx3CtP5/RCOPpk9aPG4RMQwcf1FR4bEJQAJvUNhfKclHQ==}
 
   '@module-federation/runtime-tools@0.5.1':
     resolution: {integrity: sha512-nfBedkoZ3/SWyO0hnmaxuz0R0iGPSikHZOAZ0N/dVSQaIzlffUo35B5nlC2wgWIc0JdMZfkwkjZRrnuuDIJbzg==}
@@ -871,8 +865,6 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
-
-  '@modern-js/tsconfig@2.46.1': {}
 
   '@module-federation/runtime-tools@0.5.1':
     dependencies:

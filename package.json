@@ -32,7 +32,6 @@
     "url": "https://github.com/rspack-contrib/rslog.git"
   },
   "devDependencies": {
-    "@modern-js/tsconfig": "2.46.1",
     "@rslib/core": "^0.0.16",
     "@types/node": "~16.11.7",
     "prettier": "~2.8.1",

@@ -1,7 +1,17 @@
 {
-  "extends": "@modern-js/tsconfig/base",
-  "declaration": true,
   "compilerOptions": {
+    "target": "ES2021",
+    "lib": ["ESNext"],
+    "allowJs": true,
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
