@@ -3,19 +3,19 @@
 exports[`logger > should create new logger with info level correctly 1`] = `
 [
   [
-    "[1m[31merror  [39m[22m this is a error message",
+    "error   this is a error message",
   ],
   [
-    "[1m[36minfo   [39m[22m this is an info message",
+    "info    this is an info message",
   ],
   [
-    "[1m[33mwarn   [39m[22m this is a warn message",
+    "warn    this is a warn message",
   ],
   [
-    "[1m[32mready  [39m[22m this is a ready message",
+    "ready   this is a ready message",
   ],
   [
-    "[1m[32msuccess[39m[22m this is a success message",
+    "success this is a success message",
   ],
 ]
 `;
@@ -23,10 +23,10 @@ exports[`logger > should create new logger with info level correctly 1`] = `
 exports[`logger > should create new logger with warn level correctly 1`] = `
 [
   [
-    "[1m[31merror  [39m[22m this is a error message",
+    "error   this is a error message",
   ],
   [
-    "[1m[33mwarn   [39m[22m this is a warn message",
+    "warn    this is a warn message",
   ],
 ]
 `;
@@ -34,30 +34,30 @@ exports[`logger > should create new logger with warn level correctly 1`] = `
 exports[`logger > should log as expected 1`] = `
 [
   [
-    "[1m[38;2;179;250;236m😊[39m[38;2;179;250;236m [39m[38;2;170;245;228mR[39m[38;2;160;240;221ms[39m[38;2;151;235;213ml[39m[38;2;141;230;206mo[39m[38;2;131;224;199mg[39m[38;2;131;224;199m [39m[38;2;122;219;191mv[39m[38;2;112;214;184m1[39m[38;2;103;209;176m.[39m[38;2;93;204;169m0[39m[38;2;84;199;161m.[39m[38;2;74;194;154m0[39m[38;2;74;194;154m
-[39m[22m",
+    "😊 Rslog v1.0.0
+",
   ],
   [
     "this is a log message",
   ],
   [
-    "[1m[36minfo   [39m[22m this is an info message",
+    "info    this is an info message",
   ],
   [
-    "[1m[33mwarn   [39m[22m this is a warn message",
+    "warn    this is a warn message",
   ],
   [
-    "[1m[32mready  [39m[22m this is a ready message",
+    "ready   this is a ready message",
   ],
   [
-    "[1m[32msuccess[39m[22m this is a success message",
+    "success this is a success message",
   ],
 ]
 `;
 
 exports[`logger > should log error with stack correctly 1`] = `
-[1m[31merror  [39m[22m this is an error message
-[90m    at <ROOT>/tests/logger.test.ts:68:18
+error   this is an error message
+    at <ROOT>/tests/logger.test.ts:81:18
     at file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:146:14
     at file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:61:7
     at runTest (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:960:17)
@@ -65,6 +65,6 @@ exports[`logger > should log error with stack correctly 1`] = `
     at runSuite (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1116:15)
     at runFiles (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1173:5)
     at startTests (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1182:3)
-    at file://<ROOT>/node_modules/.pnpm/vitest@2.0.5_@types+node@16.11.7_supports-color@9.4.0/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:130:11
-    at withEnv (file://<ROOT>/node_modules/.pnpm/vitest@2.0.5_@types+node@16.11.7_supports-color@9.4.0/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:94:5)[39m
+    at file://<ROOT>/node_modules/.pnpm/vitest@2.0.5_@types+node@16.11.7_supports-color@9.4.0_terser@5.19.2/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:130:11
+    at withEnv (file://<ROOT>/node_modules/.pnpm/vitest@2.0.5_@types+node@16.11.7_supports-color@9.4.0_terser@5.19.2/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:94:5)
 `;
