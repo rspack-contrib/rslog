@@ -21,7 +21,8 @@
     "build": "modern build",
     "build:watch": "modern build -w",
     "reset": "rimraf ./**/node_modules",
-    "test": "vitest"
+    "test": "vitest",
+    "bump": "npx bumpp"
   },
   "engines": {
     "node": ">=14.17.6"
@@ -44,6 +45,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "provenance": true
   }
 }
