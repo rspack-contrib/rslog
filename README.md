@@ -1,5 +1,13 @@
 # Rslog
 
+<p>
+  <a href="https://npmjs.com/package/rslog">
+   <img src="https://img.shields.io/npm/v/rslog?style=flat-square&colorA=564341&colorB=EDED91" alt="npm version" />
+  </a>
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square&colorA=564341&colorB=EDED91" alt="license" />
+  <a href="https://npmcharts.com/compare/rslog?minimal=true"><img src="https://img.shields.io/npm/dm/rslog.svg?style=flat-square&colorA=564341&colorB=EDED91" alt="downloads" /></a>
+</p>
+
 A tiny, intuitive, type-friendly logger for Node.js.
 
 - **Tiny**. [2kB gzipped](https://bundlephobia.com/package/rslog@1).
