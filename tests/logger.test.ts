@@ -1,13 +1,14 @@
 import { createLogger, logger } from '../src';
 import { join } from 'path';
 import { expect, test, describe, vi, Mock } from 'vitest';
+import stripAnsi from 'strip-ansi';
 
 const root = join(__dirname, '..');
 
 expect.addSnapshotSerializer({
   test: val => typeof val === 'string' && val.includes(root),
   print: val => {
-    return (val as any).toString().replaceAll(root, '<ROOT>');
+    return stripAnsi((val as any).toString().replaceAll(root, '<ROOT>'));
   },
 });
 
@@ -23,7 +24,11 @@ describe('logger', () => {
     logger.debug('this is a debug message');
     logger.success('this is a success message');
 
-    expect((console.log as Mock).mock.calls).toMatchSnapshot();
+    expect(
+      (console.log as Mock).mock.calls.map(items =>
+        items.map(item => stripAnsi(item.toString())),
+      ),
+    ).toMatchSnapshot();
   });
 
   test('should create new logger with info level correctly', () => {
@@ -41,7 +46,11 @@ describe('logger', () => {
     logger.debug('this is a debug message');
     logger.success('this is a success message');
 
-    expect((console.log as Mock).mock.calls).toMatchSnapshot();
+    expect(
+      (console.log as Mock).mock.calls.map(items =>
+        items.map(item => stripAnsi(item.toString())),
+      ),
+    ).toMatchSnapshot();
   });
 
   test('should create new logger with warn level correctly', () => {
@@ -59,7 +68,11 @@ describe('logger', () => {
     logger.debug('this is a debug message');
     logger.success('this is a success message');
 
-    expect((console.log as Mock).mock.calls).toMatchSnapshot();
+    expect(
+      (console.log as Mock).mock.calls.map(items =>
+        items.map(item => stripAnsi(item.toString())),
+      ),
+    ).toMatchSnapshot();
   });
 
   test('should log error with stack correctly', () => {
