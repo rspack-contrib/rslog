@@ -58,13 +58,13 @@ exports[`logger > should log as expected 1`] = `
 exports[`logger > should log error with stack correctly 1`] = `
 error   this is an error message
     at <ROOT>/tests/logger.test.ts:81:18
-    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:146:14
-    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:61:7
-    at runTest (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:960:17)
-    at runSuite (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1116:15)
-    at runSuite (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1116:15)
-    at runFiles (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1173:5)
-    at startTests (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1182:3)
-    at file://<ROOT>/node_modules/.pnpm/vitest@2.0.5_@types+node@16.11.7_supports-color@9.4.0_terser@5.19.2/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:130:11
-    at withEnv (file://<ROOT>/node_modules/.pnpm/vitest@2.0.5_@types+node@16.11.7_supports-color@9.4.0_terser@5.19.2/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:94:5)
+    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.1.8/node_modules/@vitest/runner/dist/index.js:146:14
+    at file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.1.8/node_modules/@vitest/runner/dist/index.js:533:11
+    at runWithTimeout (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.1.8/node_modules/@vitest/runner/dist/index.js:39:7)
+    at runTest (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.1.8/node_modules/@vitest/runner/dist/index.js:1056:17)
+    at runSuite (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.1.8/node_modules/@vitest/runner/dist/index.js:1205:15)
+    at runSuite (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.1.8/node_modules/@vitest/runner/dist/index.js:1205:15)
+    at runFiles (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.1.8/node_modules/@vitest/runner/dist/index.js:1262:5)
+    at startTests (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.1.8/node_modules/@vitest/runner/dist/index.js:1271:3)
+    at file://<ROOT>/node_modules/.pnpm/vitest@2.1.8_@types+node@16.18.121_supports-color@9.4.0_terser@5.19.2/node_modules/vitest/dist/chunks/runBaseTests.3qpJUEJM.js:126:11
 `;
