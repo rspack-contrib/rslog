@@ -13,8 +13,7 @@ export function gradient(message: string): string[] {
   const steps = words.length - 1;
 
   if (steps === 0) {
-    console.log(`%c${message}`, `color: rgb(${startColor.join(',')}); font-weight: bold;`);
-    return [message];
+    return [`%c${message}`, `color: rgb(${startColor.join(',')}); font-weight: bold;`];
   }
 
   let output = '';

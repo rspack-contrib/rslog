@@ -1,7 +1,10 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "../"
+    "baseUrl": "../",
+    "types": ["vitest/globals", "node"],
+    "moduleResolution": "node",
+    "esModuleInterop": true
   },
   "include": ["**/*.ts", "../src"],
   "exclude": ["**/node_modules"]

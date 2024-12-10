@@ -1,26 +1,32 @@
-
 let supportsSubstitutions: boolean | undefined = undefined;
 
 export const supportColor = () => {
   if (typeof supportsSubstitutions !== 'undefined') {
     return supportsSubstitutions;
   }
+  
+  const originalConsoleLog = console.log;
   try {
     const testString = 'color test';
     const css = 'color: red;';
-    const originalConsoleLog = console.log;
+    supportsSubstitutions = false;
+    
     console.log = (...args) => {
       if (args[0] === `%c${testString}` && args[1] === css) {
         supportsSubstitutions = true;
       }
     };
+    
     console.log(`%c${testString}`, css);
-    console.log = originalConsoleLog;
   } catch (e) {
     supportsSubstitutions = false;
+  } finally {
+    console.log = originalConsoleLog;
   }
-  return supportsSubstitutions
+  
+  return supportsSubstitutions;
 };
+
 export type ColorFn = (input: string | number | null | undefined | [label: string, style: string]) => string[];
 
 const ansiToCss = {

@@ -4,12 +4,23 @@ import { bold } from './color';
 export function getLabel(type: LogMethods, logType: LogType, labels: Labels) {
   let label = [''];
   if ('label' in logType) {
-    label = [(labels[type] || logType.label || '')];
-    label = bold(logType.color ? logType.color(label as [string, string]) as [string, string] : label[0]);
+    const labelText = type !== 'log' ? labels[type] : undefined;
+    label = [(labelText || logType.label || '')];
+    
+    if (logType.color) {
+      const colorResult = logType.color(label[0]);
+      if (Array.isArray(colorResult) && colorResult.length === 2) {
+        label = bold([colorResult[0], colorResult[1]]);
+      } else {
+        label = bold(colorResult[0] || '');
+      }
+    } else {
+      label = bold(label[0]);
+    }
   }
-  label = label.filter(Boolean)
+  label = label.filter(Boolean);
 
-  return label
+  return label;
 }
 
 export function finalLog(label: string[], text: string, args: string[], message?: LogMessage) {

@@ -1,5 +1,89 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`color and formatting > should handle emoji in gradient text 1`] = `
+[
+  [
+    "[1m[38;2;179;250;236mH[39m[38;2;170;245;228me[39m[38;2;160;240;221ml[39m[38;2;151;235;213ml[39m[38;2;141;230;206mo[39m[38;2;141;230;206m [39m[38;2;131;224;199m👋[39m[38;2;131;224;199m [39m[38;2;122;219;191mW[39m[38;2;112;214;184mo[39m[38;2;103;209;176mr[39m[38;2;93;204;169ml[39m[38;2;84;199;161md[39m[38;2;84;199;161m [39m[38;2;74;194;154m🌍[39m[22m",
+  ],
+]
+`;
+
+exports[`color and formatting > should handle gradient text with spaces and newlines 1`] = `
+[
+  [
+    "[1m[38;2;183;252;239mH[39m[38;2;178;249;234me[39m[38;2;172;246;230ml[39m[38;2;166;243;225ml[39m[38;2;160;240;221mo[39m[38;2;160;240;221m
+[39m[38;2;155;237;216mW[39m[38;2;149;234;212mo[39m[38;2;143;231;207mr[39m[38;2;137;228;203ml[39m[38;2;132;224;199md[39m[38;2;132;224;199m [39m[38;2;126;221;194mw[39m[38;2;120;218;190mi[39m[38;2;114;215;185mt[39m[38;2;109;212;181mh[39m[38;2;109;212;181m [39m[38;2;103;209;176ms[39m[38;2;97;206;172mp[39m[38;2;91;203;167ma[39m[38;2;86;200;163mc[39m[38;2;80;197;158me[39m[38;2;74;194;154ms[39m[22m",
+  ],
+]
+`;
+
+exports[`color and formatting > should handle multiple nested styles 1`] = `
+[
+  [
+    "[1m[36minfo   [39m[22m [1m[31mbold red[39m[22m text",
+  ],
+]
+`;
+
+exports[`color and formatting > should handle nested color formatting 1`] = `
+[
+  [
+    "[1m[36minfo   [39m[22m [31mred[39m and [32mgreen[39m text",
+  ],
+]
+`;
+
+exports[`error handling > should handle errors with custom toString 1`] = `
+[
+  [
+    [1m[31merror  [39m[22m message
+[90m    at <ROOT>tests/logger.node.test.ts:245:18
+    at file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:146:14
+    at file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:61:7
+    at runTest (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:960:17)
+    at runSuite (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1116:15)
+    at runSuite (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1116:15)
+    at runFiles (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1173:5)
+    at startTests (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1182:3)
+    at file://<ROOT>node_modules/.pnpm/vitest@2.0.5_@types+node@16.11.68_jsdom@25.0.1_supports-color@9.4.0/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:130:11
+    at withEnv (file://<ROOT>node_modules/.pnpm/vitest@2.0.5_@types+node@16.11.68_jsdom@25.0.1_supports-color@9.4.0/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:94:5)[39m,
+  ],
+]
+`;
+
+exports[`error handling > should handle errors with no stack trace 1`] = `
+[
+  [
+    "[1m[31merror  [39m[22m [object Object]",
+  ],
+]
+`;
+
+exports[`label formatting > should handle empty labels 1`] = `
+[
+  [
+    "[1m[36minfo   [39m[22m message",
+  ],
+  [
+    "[1m[33mwarn   [39m[22m message",
+  ],
+  [
+    "[1m[31merror  [39m[22m message",
+  ],
+]
+`;
+
+exports[`label formatting > should handle very long labels 1`] = `
+[
+  [
+    "[1m[36mVeryLongLabelThatExceedsNormalLength[39m[22m message",
+  ],
+  [
+    "[1m[33mAnotherVeryLongLabel[39m[22m message",
+  ],
+]
+`;
+
 exports[`logger > should create new logger with info level correctly 1`] = `
 [
   [
@@ -27,6 +111,93 @@ exports[`logger > should create new logger with warn level correctly 1`] = `
   ],
   [
     "[1m[33mwarn   [39m[22m this is a warn message",
+  ],
+]
+`;
+
+exports[`logger > should handle empty and undefined messages 1`] = `
+[
+  [],
+  [
+    "[1m[33mwarn   [39m[22m ",
+  ],
+  [],
+]
+`;
+
+exports[`logger > should handle error objects with custom properties 1`] = `
+[
+  [
+    [1m[31merror  [39m[22m Custom error
+[90m    at <ROOT>tests/logger.node.test.ts:125:25
+    at file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:146:14
+    at file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:61:7
+    at runTest (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:960:17)
+    at runSuite (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1116:15)
+    at runSuite (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1116:15)
+    at runFiles (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1173:5)
+    at startTests (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1182:3)
+    at file://<ROOT>node_modules/.pnpm/vitest@2.0.5_@types+node@16.11.68_jsdom@25.0.1_supports-color@9.4.0/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:130:11
+    at withEnv (file://<ROOT>node_modules/.pnpm/vitest@2.0.5_@types+node@16.11.68_jsdom@25.0.1_supports-color@9.4.0/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:94:5)[39m,
+  ],
+]
+`;
+
+exports[`logger > should handle multiple arguments in log messages 1`] = `
+[
+  [
+    "[1m[36minfo   [39m[22m Message with",
+    "multiple",
+    "arguments",
+  ],
+  [
+    "[1m[33mwarn   [39m[22m Warning with",
+    {
+      "object": "value",
+    },
+  ],
+  [
+    "[1m[31merror  [39m[22m Error with",
+    123,
+    true,
+  ],
+]
+`;
+
+exports[`logger > should handle multiple logger instances independently 1`] = `
+[
+  [
+    "[1m[36minfo   [39m[22m Info from logger1",
+  ],
+  [
+    "[1m[33mwarn   [39m[22m Warning from logger2",
+  ],
+]
+`;
+
+exports[`logger > should handle non-string messages 1`] = `
+[
+  [
+    "[1m[36minfo   [39m[22m 123",
+  ],
+  [
+    "[1m[33mwarn   [39m[22m true",
+  ],
+  [
+    "[1m[31merror  [39m[22m [object Object]",
+  ],
+]
+`;
+
+exports[`logger > should handle start method correctly 1`] = `
+[
+  [
+    "[1m[36mstart  [39m[22m Starting process",
+  ],
+  [
+    "[1m[36mstart  [39m[22m Starting with",
+    "multiple",
+    "arguments",
   ],
 ]
 `;

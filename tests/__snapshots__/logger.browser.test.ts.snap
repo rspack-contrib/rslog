@@ -1,5 +1,173 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`color module > should handle all color functions 1`] = `
+[
+  [
+    "%cinfo",
+    "font-weight: bold;color: dodgerblue;",
+    "red message",
+  ],
+  [
+    "%cwarn",
+    "font-weight: bold;color: orange;",
+    "orange message",
+  ],
+  [
+    "%csuccess",
+    "font-weight: bold;color: green;",
+    "green message",
+  ],
+]
+`;
+
+exports[`color module > should handle style combinations 1`] = `
+[
+  [
+    "%cinfo",
+    "font-weight: bold;color: dodgerblue;",
+    "test",
+    "font-weight: bold; font-style: italic;",
+  ],
+]
+`;
+
+exports[`error handling > should handle Error objects with custom properties 1`] = `
+[
+  [
+    "%cerror",
+    "font-weight: bold;color: red;",
+    Custom error
+    at <ROOT>tests/logger.browser.test.ts:354:25
+    at file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:146:14
+    at file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:61:7
+    at runTest (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:960:17)
+    at runSuite (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1116:15)
+    at runSuite (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1116:15)
+    at runFiles (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1173:5)
+    at startTests (file://<ROOT>node_modules/.pnpm/@vitest+runner@2.0.5/node_modules/@vitest/runner/dist/index.js:1182:3)
+    at file://<ROOT>node_modules/.pnpm/vitest@2.0.5_@types+node@16.11.68_jsdom@25.0.1_supports-color@9.4.0/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:130:11
+    at withEnv (file://<ROOT>node_modules/.pnpm/vitest@2.0.5_@types+node@16.11.68_jsdom@25.0.1_supports-color@9.4.0/node_modules/vitest/dist/chunks/runBaseTests.CyvqmuC9.js:94:5),
+  ],
+]
+`;
+
+exports[`error handling > should handle non-Error objects in error method 1`] = `
+[
+  [
+    "%cerror",
+    "font-weight: bold;color: red;",
+    "[object Object]",
+  ],
+  [
+    "%cerror",
+    "font-weight: bold;color: red;",
+    "string error",
+  ],
+  [
+    "%cerror",
+    "font-weight: bold;color: red;",
+    "123",
+  ],
+]
+`;
+
+exports[`gradient functionality > should handle mixed content strings 1`] = `
+[
+  [
+    "%cH%ce%cl%cl%co   %cW%co%cr%cl%cd
+  %c!  ",
+    "color: rgb(189,255,243); font-weight: bold;",
+    "color: rgb(178,249,234); font-weight: bold;",
+    "color: rgb(166,243,225); font-weight: bold;",
+    "color: rgb(166,243,225); font-weight: bold;",
+    "color: rgb(143,231,207); font-weight: bold;",
+    "color: rgb(132,225,199); font-weight: bold;",
+    "color: rgb(143,231,207); font-weight: bold;",
+    "color: rgb(109,212,181); font-weight: bold;",
+    "color: rgb(166,243,225); font-weight: bold;",
+    "color: rgb(86,200,163); font-weight: bold;",
+    "color: rgb(74,194,154); font-weight: bold;",
+  ],
+]
+`;
+
+exports[`gradient functionality > should handle whitespace-only strings 1`] = `
+[
+  [
+    "   
+   	   ",
+  ],
+]
+`;
+
+exports[`gradient module > should handle multi-line text 1`] = `
+[
+  [
+    "%cL%ci%cn%ce %c1
+%cL%ci%cn%ce %c2
+%cL%ci%cn%ce %c3",
+    "color: rgb(189,255,243); font-weight: bold;",
+    "color: rgb(181,251,237); font-weight: bold;",
+    "color: rgb(173,246,230); font-weight: bold;",
+    "color: rgb(164,242,224); font-weight: bold;",
+    "color: rgb(156,238,218); font-weight: bold;",
+    "color: rgb(189,255,243); font-weight: bold;",
+    "color: rgb(181,251,237); font-weight: bold;",
+    "color: rgb(173,246,230); font-weight: bold;",
+    "color: rgb(164,242,224); font-weight: bold;",
+    "color: rgb(115,216,186); font-weight: bold;",
+    "color: rgb(189,255,243); font-weight: bold;",
+    "color: rgb(181,251,237); font-weight: bold;",
+    "color: rgb(173,246,230); font-weight: bold;",
+    "color: rgb(164,242,224); font-weight: bold;",
+    "color: rgb(74,194,154); font-weight: bold;",
+  ],
+]
+`;
+
+exports[`gradient module > should handle special characters 1`] = `
+[
+  [
+    "%cH%ce%cl%cl%co %c👋 %cW%co%cr%cl%cd%c! %c@%c#%c$%c%",
+    "color: rgb(189,255,243); font-weight: bold;",
+    "color: rgb(181,251,237); font-weight: bold;",
+    "color: rgb(174,247,231); font-weight: bold;",
+    "color: rgb(174,247,231); font-weight: bold;",
+    "color: rgb(158,239,219); font-weight: bold;",
+    "color: rgb(151,235,213); font-weight: bold;",
+    "color: rgb(143,231,207); font-weight: bold;",
+    "color: rgb(158,239,219); font-weight: bold;",
+    "color: rgb(128,222,196); font-weight: bold;",
+    "color: rgb(174,247,231); font-weight: bold;",
+    "color: rgb(112,214,184); font-weight: bold;",
+    "color: rgb(105,210,178); font-weight: bold;",
+    "color: rgb(97,206,172); font-weight: bold;",
+    "color: rgb(89,202,166); font-weight: bold;",
+    "color: rgb(82,198,160); font-weight: bold;",
+    "color: rgb(74,194,154); font-weight: bold;",
+  ],
+]
+`;
+
+exports[`label handling > should handle custom color functions 1`] = `
+[
+  [
+    "%cCUSTOM",
+    "font-weight: bold;color: dodgerblue;",
+    "CUSTOM",
+    "color: purple;",
+  ],
+]
+`;
+
+exports[`label handling > should handle missing label in log type 1`] = `
+[
+  [
+    "test message",
+  ],
+]
+`;
+
 exports[`logger > should create new logger with info level correctly 1`] = `
 [
   [
@@ -41,6 +209,79 @@ exports[`logger > should create new logger with warn level correctly 1`] = `
     "%cwarn",
     "font-weight: bold;color: orange;",
     "this is a warn message",
+  ],
+]
+`;
+
+exports[`logger > should handle custom log types 1`] = `
+[
+  [
+    "test message",
+  ],
+  [
+    "%cCUSTOM_INFO",
+    "font-weight: bold;color: dodgerblue;",
+    "test message",
+  ],
+  [
+    "%cCUSTOM_WARN",
+    "font-weight: bold;color: orange;",
+    "test message",
+  ],
+  [
+    "%cCUSTOM_ERROR",
+    "font-weight: bold;color: red;",
+    "test message",
+  ],
+  [
+    "%cCUSTOM_SUCCESS",
+    "font-weight: bold;color: green;",
+    "test message",
+  ],
+  [
+    "%cCUSTOM_READY",
+    "font-weight: bold;color: green;",
+    "test message",
+  ],
+  [
+    "%cCUSTOM_START",
+    "font-weight: bold;color: dodgerblue;",
+    "test message",
+  ],
+]
+`;
+
+exports[`logger > should handle invalid log level gracefully 1`] = `
+[
+  [
+    "%cinfo",
+    "font-weight: bold;color: dodgerblue;",
+    "test message",
+  ],
+  [
+    "%cdebug",
+    "font-weight: bold;color: magenta;",
+    "test message",
+  ],
+]
+`;
+
+exports[`logger > should handle multiple arguments in log message 1`] = `
+[
+  [
+    "%cinfo",
+    "font-weight: bold;color: dodgerblue;",
+    "message",
+  ],
+]
+`;
+
+exports[`logger > should handle objects in log message 1`] = `
+[
+  [
+    "%cinfo",
+    "font-weight: bold;color: dodgerblue;",
+    "message",
   ],
 ]
 `;
@@ -112,6 +353,69 @@ exports[`logger > use custom labels if the value is passed 1`] = `
     "%c[ Prefix ] Success",
     "font-weight: bold;color: green;",
     "this is a success message",
+  ],
+]
+`;
+
+exports[`logger configuration > should handle empty string messages 1`] = `
+[
+  [
+    "%cinfo",
+    "font-weight: bold;color: dodgerblue;",
+    "",
+  ],
+  [
+    "%cwarn",
+    "font-weight: bold;color: orange;",
+    "",
+  ],
+  [
+    "%cerror",
+    "font-weight: bold;color: red;",
+    "",
+  ],
+]
+`;
+
+exports[`logger configuration > should handle non-string messages 1`] = `
+[
+  [
+    "%cinfo",
+    "font-weight: bold;color: dodgerblue;",
+    "123",
+  ],
+  [],
+  [],
+  [
+    "%cinfo",
+    "font-weight: bold;color: dodgerblue;",
+    "[object Object]",
+  ],
+]
+`;
+
+exports[`utils module > should handle array messages 1`] = `
+[
+  [
+    "%cinfo",
+    "font-weight: bold;color: dodgerblue;",
+    "message part 1",
+    "message part 2",
+  ],
+]
+`;
+
+exports[`utils module > should handle empty labels 1`] = `
+[
+  [
+    "%cinfo",
+    "font-weight: bold;color: dodgerblue;",
+    "test message",
+  ],
+  [
+    "%cwarn",
+    "font-weight: bold;color: orange;",
+    "test message",
   ],
 ]
 `;
