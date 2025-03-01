@@ -22,9 +22,6 @@
     "test": "vitest",
     "bump": "npx bumpp"
   },
-  "engines": {
-    "node": ">=14.21.3"
-  },
   "packageManager": "pnpm@9.15.6",
   "repository": {
     "type": "git",
