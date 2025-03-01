@@ -19,7 +19,6 @@
     "preview": "bun run ./preview.ts",
     "build": "rslib build",
     "dev": "rslib build --watch",
-    "reset": "rimraf ./**/node_modules",
     "test": "vitest",
     "bump": "npx bumpp"
   },
@@ -33,9 +32,8 @@
   },
   "devDependencies": {
     "@rslib/core": "^0.5.2",
-    "@types/node": "~16.18.126",
+    "@types/node": "^22.13.8",
     "prettier": "~2.8.8",
-    "rimraf": "~3.0.2",
     "strip-ansi": "^7.1.0",
     "supports-color": "^9.4.0",
     "typescript": "~5.8.2",
