@@ -12,8 +12,8 @@ importers:
         specifier: ^0.1.3
         version: 0.1.3(typescript@5.7.2)
       '@types/node':
-        specifier: ~16.18.121
-        version: 16.18.121
+        specifier: ~22.13.8
+        version: 22.13.8
       prettier:
         specifier: ~2.8.8
         version: 2.8.8
@@ -31,7 +31,7 @@ importers:
         version: 5.7.2
       vitest:
         specifier: ^2.1.8
-        version: 2.1.8(@types/node@16.18.121)(supports-color@9.4.0)(terser@5.19.2)
+        version: 2.1.8(@types/node@22.13.8)(supports-color@9.4.0)(terser@5.19.2)
 
 packages:
 
@@ -371,8 +371,8 @@ packages:
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
-  '@types/node@16.18.121':
-    resolution: {integrity: sha512-Gk/pOy8H0cvX8qNrwzElYIECpcUn87w4EAEFXFvPJ8qsP9QR/YqukUORSy0zmyDyvdo149idPpy4W6iC5aSbQA==}
+  '@types/node@22.13.8':
+    resolution: {integrity: sha512-G3EfaZS+iOGYWLLRCEAXdWK9my08oHNZ+FHluRiggIYJPOXzhOiDgpVCUHaUvyIC5/fj7C/p637jdzC666AOKQ==}
 
   '@vitest/expect@2.1.8':
     resolution: {integrity: sha512-8ytZ/fFHq2g4PJVAtDX57mayemKgDR6X3Oa2Foro+EygiOJHUXhCqBAAKQYYajZpFoIfvBCF1j6R6IYRSIUFuw==}
@@ -645,6 +645,9 @@ packages:
     resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
   vite-node@2.1.8:
     resolution: {integrity: sha512-uPAwSr57kYjAUux+8E2j0q0Fxpn8M9VoyfGiRI8Kfktz9NcYMCenwY5RnZxnF1WTu3TGiYipirIzacLL3VVGFg==}
@@ -948,7 +951,9 @@ snapshots:
 
   '@types/estree@1.0.5': {}
 
-  '@types/node@16.18.121': {}
+  '@types/node@22.13.8':
+    dependencies:
+      undici-types: 6.20.0
 
   '@vitest/expect@2.1.8':
     dependencies:
@@ -957,13 +962,13 @@ snapshots:
       chai: 5.1.2
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.8(vite@5.4.3(@types/node@16.18.121)(terser@5.19.2))':
+  '@vitest/mocker@2.1.8(vite@5.4.3(@types/node@22.13.8)(terser@5.19.2))':
     dependencies:
       '@vitest/spy': 2.1.8
       estree-walker: 3.0.3
       magic-string: 0.30.12
     optionalDependencies:
-      vite: 5.4.3(@types/node@16.18.121)(terser@5.19.2)
+      vite: 5.4.3(@types/node@22.13.8)(terser@5.19.2)
 
   '@vitest/pretty-format@2.1.8':
     dependencies:
@@ -1226,13 +1231,15 @@ snapshots:
 
   typescript@5.7.2: {}
 
-  vite-node@2.1.8(@types/node@16.18.121)(supports-color@9.4.0)(terser@5.19.2):
+  undici-types@6.20.0: {}
+
+  vite-node@2.1.8(@types/node@22.13.8)(supports-color@9.4.0)(terser@5.19.2):
     dependencies:
       cac: 6.7.14
       debug: 4.3.7(supports-color@9.4.0)
       es-module-lexer: 1.5.4
       pathe: 1.1.2
-      vite: 5.4.3(@types/node@16.18.121)(terser@5.19.2)
+      vite: 5.4.3(@types/node@22.13.8)(terser@5.19.2)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -1244,20 +1251,20 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.4.3(@types/node@16.18.121)(terser@5.19.2):
+  vite@5.4.3(@types/node@22.13.8)(terser@5.19.2):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.45
       rollup: 4.21.2
     optionalDependencies:
-      '@types/node': 16.18.121
+      '@types/node': 22.13.8
       fsevents: 2.3.3
       terser: 5.19.2
 
-  vitest@2.1.8(@types/node@16.18.121)(supports-color@9.4.0)(terser@5.19.2):
+  vitest@2.1.8(@types/node@22.13.8)(supports-color@9.4.0)(terser@5.19.2):
     dependencies:
       '@vitest/expect': 2.1.8
-      '@vitest/mocker': 2.1.8(vite@5.4.3(@types/node@16.18.121)(terser@5.19.2))
+      '@vitest/mocker': 2.1.8(vite@5.4.3(@types/node@22.13.8)(terser@5.19.2))
       '@vitest/pretty-format': 2.1.8
       '@vitest/runner': 2.1.8
       '@vitest/snapshot': 2.1.8
@@ -1273,11 +1280,11 @@ snapshots:
       tinyexec: 0.3.1
       tinypool: 1.0.1
       tinyrainbow: 1.2.0
-      vite: 5.4.3(@types/node@16.18.121)(terser@5.19.2)
-      vite-node: 2.1.8(@types/node@16.18.121)(supports-color@9.4.0)(terser@5.19.2)
+      vite: 5.4.3(@types/node@22.13.8)(terser@5.19.2)
+      vite-node: 2.1.8(@types/node@22.13.8)(supports-color@9.4.0)(terser@5.19.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 16.18.121
+      '@types/node': 22.13.8
     transitivePeerDependencies:
       - less
       - lightningcss
