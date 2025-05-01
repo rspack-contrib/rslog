@@ -22,7 +22,7 @@
     "test": "vitest",
     "bump": "npx bumpp"
   },
-  "packageManager": "pnpm@9.15.6",
+  "packageManager": "pnpm@10.10.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/rspack-contrib/rslog.git"
