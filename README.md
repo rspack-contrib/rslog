@@ -107,7 +107,8 @@ The log levels of each method are as follows:
 
 | Level   | Method                              |
 | ------- | ----------------------------------- |
-| error   | `error`                             |
+| silent  | No log will be output               |
+| error   | only `error` logs                   |
 | warn    | `warn`                              |
 | info    | `info`, `start`, `ready`, `success` |
 | log     | `log`                               |

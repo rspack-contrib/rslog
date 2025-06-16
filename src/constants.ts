@@ -2,6 +2,7 @@ import { red, yellow, cyan, green, magenta } from './color';
 import type { LogType } from './types';
 
 export let LOG_LEVEL = {
+  silent: -1,
   error: 0,
   warn: 1,
   info: 2,
