@@ -1,4 +1,4 @@
-import { createLogger, logger } from '../src';
+import { createLogger, Logger, logger } from '../src';
 import { join } from 'path';
 import { expect, test, describe, vi, Mock } from 'vitest';
 import stripAnsi from 'strip-ansi';
@@ -12,17 +12,22 @@ expect.addSnapshotSerializer({
   },
 });
 
+const printTestLogs = (logger: Logger) => {
+  logger.greet(`😊 Rslog v1.0.0\n`);
+  logger.log('this is a log message');
+  logger.error('this is a error message');
+  logger.info('this is an info message');
+  logger.warn('this is a warn message');
+  logger.ready('this is a ready message');
+  logger.debug('this is a debug message');
+  logger.success('this is a success message');
+};
+
 describe('logger', () => {
   test('should log as expected', () => {
     console.log = vi.fn();
 
-    logger.greet(`😊 Rslog v1.0.0\n`);
-    logger.log('this is a log message');
-    logger.info('this is an info message');
-    logger.warn('this is a warn message');
-    logger.ready('this is a ready message');
-    logger.debug('this is a debug message');
-    logger.success('this is a success message');
+    printTestLogs(logger);
 
     expect(
       (console.log as Mock).mock.calls.map(items =>
@@ -38,13 +43,7 @@ describe('logger', () => {
       level: 'info',
     });
 
-    logger.greet(`😊 Rslog v1.0.0\n`);
-    logger.error('this is a error message');
-    logger.info('this is an info message');
-    logger.warn('this is a warn message');
-    logger.ready('this is a ready message');
-    logger.debug('this is a debug message');
-    logger.success('this is a success message');
+    printTestLogs(logger);
 
     expect(
       (console.log as Mock).mock.calls.map(items =>
@@ -60,13 +59,7 @@ describe('logger', () => {
       level: 'warn',
     });
 
-    logger.greet(`😊 Rslog v1.0.0\n`);
-    logger.error('this is a error message');
-    logger.info('this is an info message');
-    logger.warn('this is a warn message');
-    logger.ready('this is a ready message');
-    logger.debug('this is a debug message');
-    logger.success('this is a success message');
+    printTestLogs(logger);
 
     expect(
       (console.log as Mock).mock.calls.map(items =>
@@ -81,5 +74,17 @@ describe('logger', () => {
     logger.error(new Error('this is an error message'));
 
     expect((console.log as Mock).mock.calls[0][0]).toMatchSnapshot();
+  });
+
+  test('should create new logger with silent level correctly', () => {
+    console.log = vi.fn();
+
+    const logger = createLogger({
+      level: 'silent',
+    });
+
+    printTestLogs(logger);
+
+    expect((console.log as Mock).mock.calls.length).toBe(0);
   });
 });
