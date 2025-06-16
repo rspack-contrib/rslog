@@ -1,9 +1,10 @@
 {
   "name": "rslog",
   "version": "1.2.3",
-  "types": "./dist/index.d.ts",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rspack-contrib/rslog.git"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -11,34 +12,33 @@
       "require": "./dist/index.js"
     }
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
+    "build": "rslib build",
+    "bump": "npx bumpp",
+    "dev": "rslib build --watch",
     "prepare": "rslib build",
     "preview": "bun run ./preview.ts",
-    "build": "rslib build",
-    "dev": "rslib build --watch",
-    "test": "vitest",
-    "bump": "npx bumpp"
-  },
-  "packageManager": "pnpm@10.10.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rspack-contrib/rslog.git"
+    "test": "vitest"
   },
   "devDependencies": {
     "@rslib/core": "^0.5.2",
+    "@rstest/core": "https://pkg.pr.new/web-infra-dev/rstest/@rstest/core@1b40438",
     "@types/node": "^22.13.8",
     "prettier": "~3.5.3",
     "strip-ansi": "^7.1.0",
     "supports-color": "^9.4.0",
-    "typescript": "~5.8.2",
-    "vitest": "^2.1.8"
+    "typescript": "~5.8.2"
   },
+  "packageManager": "pnpm@10.10.0",
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
   }
 }
