@@ -3,7 +3,7 @@
     "target": "ES2021",
     "lib": ["ESNext"],
     "allowJs": true,
-    "module": "commonjs",
+    "module": "module",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -11,7 +11,7 @@
     "declaration": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]

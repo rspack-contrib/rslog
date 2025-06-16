@@ -1,6 +1,6 @@
 import { createLogger, logger } from '../src';
 import { join } from 'path';
-import { expect, test, describe, vi, Mock } from 'vitest';
+import { expect, test, describe, rstest, Mock } from '@rstest/core';
 import stripAnsi from 'strip-ansi';
 
 const root = join(__dirname, '..');
@@ -14,7 +14,7 @@ expect.addSnapshotSerializer({
 
 describe('logger', () => {
   test('should log as expected', () => {
-    console.log = vi.fn();
+    console.log = rstest.fn();
 
     logger.greet(`😊 Rslog v1.0.0\n`);
     logger.log('this is a log message');
