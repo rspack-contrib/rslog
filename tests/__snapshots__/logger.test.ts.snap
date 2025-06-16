@@ -69,5 +69,5 @@ error   this is an error message
     at runSuite (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.1.8/node_modules/@vitest/runner/dist/index.js:1205:15)
     at runFiles (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.1.8/node_modules/@vitest/runner/dist/index.js:1262:5)
     at startTests (file://<ROOT>/node_modules/.pnpm/@vitest+runner@2.1.8/node_modules/@vitest/runner/dist/index.js:1271:3)
-    at file://<ROOT>/node_modules/.pnpm/vitest@2.1.8_@types+node@22.15.31_supports-color@9.4.0_terser@5.19.2/node_modules/vitest/dist/chunks/runBaseTests.3qpJUEJM.js:126:11
+    at file://<ROOT>/node_modules/.pnpm/vitest@2.1.8_@types+node@22.15.31_supports-color@10.0.0_terser@5.19.2/node_modules/vitest/dist/chunks/runBaseTests.3qpJUEJM.js:126:11
 `;

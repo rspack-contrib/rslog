@@ -21,14 +21,14 @@ importers:
         specifier: ^7.1.0
         version: 7.1.0
       supports-color:
-        specifier: ^9.4.0
-        version: 9.4.0
+        specifier: ^10.0.0
+        version: 10.0.0
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
       vitest:
         specifier: ^2.1.8
-        version: 2.1.8(@types/node@22.15.31)(supports-color@9.4.0)(terser@5.19.2)
+        version: 2.1.8(@types/node@22.15.31)(supports-color@10.0.0)(terser@5.19.2)
 
 packages:
 
@@ -643,9 +643,9 @@ packages:
     resolution: {integrity: sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==}
     engines: {node: '>=4'}
 
-  supports-color@9.4.0:
-    resolution: {integrity: sha512-VL+lNrEoIXww1coLPOmiEmK/0sGigko5COxI09KzHc2VJXJsQ37UaQ+8quuxjDeA7+KnLGTWRyOXSLLR2Wb4jw==}
-    engines: {node: '>=12'}
+  supports-color@10.0.0:
+    resolution: {integrity: sha512-HRVVSbCCMbj7/kdWF9Q+bbckjBHLtHMEoJWlkmYzzdwhYMkjkOwubLM6t7NbWKjgKamGDrWL1++KrjUO1t9oAQ==}
+    engines: {node: '>=18'}
 
   terser@5.19.2:
     resolution: {integrity: sha512-qC5+dmecKJA4cpYxRa5aVkKehYsQKc+AHeKl0Oe62aYjBL8ZA33tTljktDHJSaxxMnbI5ZYw+o/S2DxxLu8OfA==}
@@ -1107,11 +1107,11 @@ snapshots:
 
   core-js@3.42.0: {}
 
-  debug@4.3.7(supports-color@9.4.0):
+  debug@4.3.7(supports-color@10.0.0):
     dependencies:
       ms: 2.1.3
     optionalDependencies:
-      supports-color: 9.4.0
+      supports-color: 10.0.0
 
   deep-eql@5.0.2: {}
 
@@ -1254,7 +1254,7 @@ snapshots:
 
   strip-bom@3.0.0: {}
 
-  supports-color@9.4.0: {}
+  supports-color@10.0.0: {}
 
   terser@5.19.2:
     dependencies:
@@ -1291,10 +1291,10 @@ snapshots:
 
   undici-types@6.21.0: {}
 
-  vite-node@2.1.8(@types/node@22.15.31)(supports-color@9.4.0)(terser@5.19.2):
+  vite-node@2.1.8(@types/node@22.15.31)(supports-color@10.0.0)(terser@5.19.2):
     dependencies:
       cac: 6.7.14
-      debug: 4.3.7(supports-color@9.4.0)
+      debug: 4.3.7(supports-color@10.0.0)
       es-module-lexer: 1.5.4
       pathe: 1.1.2
       vite: 5.4.3(@types/node@22.15.31)(terser@5.19.2)
@@ -1319,7 +1319,7 @@ snapshots:
       fsevents: 2.3.3
       terser: 5.19.2
 
-  vitest@2.1.8(@types/node@22.15.31)(supports-color@9.4.0)(terser@5.19.2):
+  vitest@2.1.8(@types/node@22.15.31)(supports-color@10.0.0)(terser@5.19.2):
     dependencies:
       '@vitest/expect': 2.1.8
       '@vitest/mocker': 2.1.8(vite@5.4.3(@types/node@22.15.31)(terser@5.19.2))
@@ -1329,7 +1329,7 @@ snapshots:
       '@vitest/spy': 2.1.8
       '@vitest/utils': 2.1.8
       chai: 5.1.2
-      debug: 4.3.7(supports-color@9.4.0)
+      debug: 4.3.7(supports-color@10.0.0)
       expect-type: 1.1.0
       magic-string: 0.30.12
       pathe: 1.1.2
@@ -1339,7 +1339,7 @@ snapshots:
       tinypool: 1.0.1
       tinyrainbow: 1.2.0
       vite: 5.4.3(@types/node@22.15.31)(terser@5.19.2)
-      vite-node: 2.1.8(@types/node@22.15.31)(supports-color@9.4.0)(terser@5.19.2)
+      vite-node: 2.1.8(@types/node@22.15.31)(supports-color@10.0.0)(terser@5.19.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 22.15.31
