@@ -3,6 +3,13 @@
 exports[`logger > should create new logger with info level correctly 1`] = `
 [
   [
+    "😊 Rslog v1.0.0
+",
+  ],
+  [
+    "this is a log message",
+  ],
+  [
     "error   this is a error message",
   ],
   [
