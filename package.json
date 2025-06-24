@@ -28,6 +28,7 @@
     "url": "https://github.com/rspack-contrib/rslog.git"
   },
   "devDependencies": {
+    "@microsoft/api-extractor": "^7.52.8",
     "@rslib/core": "^0.9.2",
     "@types/node": "^22.15.31",
     "prettier": "~3.5.3",
