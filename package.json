@@ -1,8 +1,11 @@
 {
   "name": "rslog",
   "version": "1.2.8",
-  "types": "./dist/index.d.ts",
-  "main": "./dist/index.cjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rspack-contrib/rslog.git"
+  },
+  "license": "MIT",
   "type": "module",
   "exports": {
     ".": {
@@ -11,21 +14,18 @@
       "require": "./dist/index.cjs"
     }
   },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
+    "build": "rslib build",
+    "bump": "npx bumpp",
+    "dev": "rslib build --watch",
     "prepare": "rslib build",
     "preview": "bun run ./preview.ts",
-    "build": "rslib build",
-    "dev": "rslib build --watch",
-    "test": "vitest",
-    "bump": "npx bumpp"
-  },
-  "packageManager": "pnpm@10.12.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/rspack-contrib/rslog.git"
+    "test": "vitest"
   },
   "devDependencies": {
     "@microsoft/api-extractor": "^7.52.8",
@@ -37,9 +37,10 @@
     "typescript": "~5.8.3",
     "vitest": "^2.1.8"
   },
+  "packageManager": "pnpm@10.12.1",
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/",
-    "provenance": true
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
   }
 }
