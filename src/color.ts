@@ -1,4 +1,4 @@
-import { colorLevel } from './utils';
+import { colorLevel } from './utils.js';
 
 export type ColorFn = (input: string | number | null | undefined) => string;
 

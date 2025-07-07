@@ -1,5 +1,5 @@
-import { red, yellow, cyan, green, magenta } from './color';
-import type { LogType } from './types';
+import { red, yellow, cyan, green, magenta } from './color.js';
+import type { LogType } from './types.js';
 
 export let LOG_LEVEL = {
   silent: -1,

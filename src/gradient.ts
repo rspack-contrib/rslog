@@ -1,5 +1,5 @@
-import { bold, cyan } from './color';
-import { colorLevel } from './utils';
+import { bold, cyan } from './color.js';
+import { colorLevel } from './utils.js';
 
 // RGB for #bdfff3
 let startColor = [189, 255, 243];
