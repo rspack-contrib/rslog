@@ -1,4 +1,4 @@
-import { createLogger, Logger, logger } from '../src';
+import { createLogger, Logger, logger } from '../src/index.js';
 import { join } from 'path';
 import { expect, test, describe, rstest, Mock } from '@rstest/core';
 import stripAnsi from 'strip-ansi';
@@ -37,7 +37,7 @@ describe('logger', () => {
   });
 
   test('should create new logger with info level correctly', () => {
-    console.log = vi.fn();
+    console.log = rs.fn();
 
     const logger = createLogger({
       level: 'info',
@@ -53,7 +53,7 @@ describe('logger', () => {
   });
 
   test('should create new logger with warn level correctly', () => {
-    console.log = vi.fn();
+    console.log = rs.fn();
 
     const logger = createLogger({
       level: 'warn',
@@ -69,7 +69,7 @@ describe('logger', () => {
   });
 
   test('should log error with stack correctly', () => {
-    console.log = vi.fn();
+    console.log = rs.fn();
 
     logger.error(new Error('this is an error message'));
 
@@ -77,7 +77,7 @@ describe('logger', () => {
   });
 
   test('should create new logger with silent level correctly', () => {
-    console.log = vi.fn();
+    console.log = rs.fn();
 
     const logger = createLogger({
       level: 'silent',

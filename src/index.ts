@@ -1,6 +1,6 @@
-import { createLogger } from './createLogger';
+import { createLogger } from './createLogger.js';
 
-export { createLogger } from './createLogger';
+export { createLogger };
 
 export let logger = createLogger();
 
@@ -11,4 +11,4 @@ export type {
   LogLevel,
   LogMessage,
   LogFunction,
-} from './types';
+} from './types.js';

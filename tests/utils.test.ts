@@ -1,5 +1,4 @@
-import { isErrorStackMessage } from '../src/utils';
-import { expect, test, describe } from 'vitest';
+import { isErrorStackMessage } from '../src/utils.js';
 
 describe('isErrorStackMessage', () => {
   test('should test error stack message correctly', () => {

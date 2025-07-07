@@ -3,7 +3,7 @@
     "target": "ES2021",
     "lib": ["ESNext"],
     "allowJs": true,
-    "module": "module",
+    "module": "Node16",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -13,6 +13,7 @@
     "resolveJsonModule": true,
     "moduleResolution": "node16",
     "baseUrl": "./",
+    "types": ["@rstest/core/globals"],
     "paths": {
       "@/*": ["./src/*"]
     },
