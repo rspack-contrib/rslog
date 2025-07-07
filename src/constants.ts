@@ -2,11 +2,13 @@ import { red, yellow, cyan, green, magenta } from './color';
 import type { LogType } from './types';
 
 export let LOG_LEVEL = {
+  silent: -1,
   error: 0,
   warn: 1,
   info: 2,
-  log: 3,
-  verbose: 4,
+  // log is an alias of info
+  log: 2,
+  verbose: 3,
 } as const;
 
 export let LOG_TYPES = {
@@ -43,9 +45,8 @@ export let LOG_TYPES = {
     level: 'info',
     color: green,
   },
-  // Level log
   log: {
-    level: 'log',
+    level: 'info',
   },
   // Level debug
   debug: {

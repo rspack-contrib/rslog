@@ -1,7 +1,7 @@
 import type { ColorFn } from './color';
 import type { LOG_TYPES } from './constants';
 
-export type LogLevel = 'error' | 'warn' | 'info' | 'log' | 'verbose';
+export type LogLevel = 'silent' | 'error' | 'warn' | 'info' | 'log' | 'verbose';
 
 export type LogMessage = unknown;
 

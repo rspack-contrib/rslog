@@ -5,7 +5,7 @@ import { isErrorStackMessage } from './utils';
 import type { Options, LogMessage, Logger, LogMethods } from './types';
 
 export let createLogger = (options: Options = {}) => {
-  let maxLevel = options.level || 'log';
+  let maxLevel = options.level || 'info';
 
   let log = (type: LogMethods, message?: LogMessage, ...args: string[]) => {
     if (LOG_LEVEL[LOG_TYPES[type].level] > LOG_LEVEL[maxLevel]) {

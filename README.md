@@ -105,13 +105,13 @@ logger.level = 'verbose';
 
 The log levels of each method are as follows:
 
-| Level   | Method                              |
-| ------- | ----------------------------------- |
-| error   | `error`                             |
-| warn    | `warn`                              |
-| info    | `info`, `start`, `ready`, `success` |
-| log     | `log`                               |
-| verbose | `debug`                             |
+| Level      | Method                                              |
+| ---------- | --------------------------------------------------- |
+| silent     | No log will be output                               |
+| error      | only `error` logs                                   |
+| warn       | `warn`                                              |
+| info (log) | `info`, `start`, `ready`, `success`, `log`, `greet` |
+| verbose    | `debug`                                             |
 
 ## Override
 
