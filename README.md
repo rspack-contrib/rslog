@@ -142,7 +142,7 @@ Rslog provides both CommonJS and ESModule output and supports Node.js >= 14.
 
 ## Credits
 
-Rslog is built with [Modern.js](https://github.com/web-infra-dev/modern.js).
+Rslog is built with [Rslib](https://github.com/web-infra-dev/rslib).
 
 The color implementation of Rslog are modified from [alexeyraspopov/picocolors](https://github.com/alexeyraspopov/picocolors).
 
