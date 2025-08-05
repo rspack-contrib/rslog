@@ -68,13 +68,13 @@ exports[`logger > should log as expected 1`] = `
 exports[`logger > should log error with stack correctly 1`] = `
 error   this is an error message
     at <ROOT>/tests/logger.test.ts:74:18
-    at Object.fn (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.0.6/node_modules/@rstest/core/dist/867.js:578:25)
-    at runTestsCase (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.0.6/node_modules/@rstest/core/dist/867.js:691:40)
-    at runTest (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.0.6/node_modules/@rstest/core/dist/867.js:808:51)
-    at runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.0.6/node_modules/@rstest/core/dist/867.js:739:25)
-    at runTest (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.0.6/node_modules/@rstest/core/dist/867.js:786:25)
-    at runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.0.6/node_modules/@rstest/core/dist/867.js:739:25)
-    at TestRunner.runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.0.6/node_modules/@rstest/core/dist/867.js:842:17)
-    at Object.runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.0.6/node_modules/@rstest/core/dist/867.js:1308:41)
-    at runInPool (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.0.6/node_modules/@rstest/core/dist/worker.js:5948:25)
+    at Object.fn (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.1.0/node_modules/@rstest/core/dist/867.js:578:25)
+    at runTestsCase (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.1.0/node_modules/@rstest/core/dist/867.js:691:40)
+    at runTest (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.1.0/node_modules/@rstest/core/dist/867.js:808:51)
+    at runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.1.0/node_modules/@rstest/core/dist/867.js:739:25)
+    at runTest (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.1.0/node_modules/@rstest/core/dist/867.js:786:25)
+    at runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.1.0/node_modules/@rstest/core/dist/867.js:739:25)
+    at TestRunner.runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.1.0/node_modules/@rstest/core/dist/867.js:842:17)
+    at Object.runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.1.0/node_modules/@rstest/core/dist/867.js:1304:41)
+    at runInPool (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.1.0/node_modules/@rstest/core/dist/worker.js:5957:25)
 `;
