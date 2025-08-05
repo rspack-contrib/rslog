@@ -28,7 +28,6 @@
     "test": "rstest"
   },
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.52.10",
     "@rslib/core": "^0.11.1",
     "@rstest/core": "^0.1.0",
     "@types/node": "^22.15.31",
