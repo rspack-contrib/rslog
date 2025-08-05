@@ -1,6 +1,6 @@
 import { createLogger, Logger, logger } from '../src/index.js';
 import { join } from 'path';
-import { expect, test, describe, rstest, Mock } from '@rstest/core';
+import { expect, test, describe, rs, Mock } from '@rstest/core';
 import stripAnsi from 'strip-ansi';
 
 const root = join(__dirname, '..');
