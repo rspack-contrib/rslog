@@ -12,6 +12,10 @@ expect.addSnapshotSerializer({
   },
 });
 
+const getErrorCause = () => {
+  return new Error('this is a cause error');
+};
+
 const printTestLogs = (logger: Logger) => {
   logger.greet(`😊 Rslog v1.0.0\n`);
   logger.log('this is a log message');
@@ -72,6 +76,18 @@ describe('logger', () => {
     console.log = rs.fn();
 
     logger.error(new Error('this is an error message'));
+
+    expect((console.log as Mock).mock.calls[0][0]).toMatchSnapshot();
+  });
+
+  test('should log error with cause correctly', () => {
+    console.log = rs.fn();
+
+    logger.error(
+      new Error('this is an error message with cause', {
+        cause: getErrorCause(),
+      }),
+    );
 
     expect((console.log as Mock).mock.calls[0][0]).toMatchSnapshot();
   });
