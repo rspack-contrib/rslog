@@ -24,7 +24,7 @@
     "bump": "npx bumpp",
     "dev": "rslib build --watch",
     "prepare": "rslib build",
-    "preview": "bun run ./preview.ts",
+    "preview": "node ./preview/index.ts",
     "test": "rstest"
   },
   "devDependencies": {

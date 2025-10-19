@@ -1,8 +1,20 @@
-import { bold, gray } from './color.js';
+import { bold, gray, yellow } from './color.js';
 import { gradient } from './gradient.js';
 import { LOG_LEVEL, LOG_TYPES } from './constants.js';
 import { isErrorStackMessage } from './utils.js';
 import type { Options, LogMessage, Logger, LogMethods } from './types.js';
+
+const normalizeErrorMessage = (err: Error) => {
+  if (err.stack) {
+    let [name, ...rest] = err.stack.split('\n');
+    if (name.startsWith('Error: ')) {
+      name = name.slice(7);
+    }
+    return `${name}\n${gray(rest.join('\n'))}`;
+  }
+
+  return err.message;
+};
 
 export let createLogger = (options: Options = {}) => {
   let maxLevel = options.level || 'info';
@@ -26,14 +38,13 @@ export let createLogger = (options: Options = {}) => {
     }
 
     if (message instanceof Error) {
-      if (message.stack) {
-        let [name, ...rest] = message.stack.split('\n');
-        if (name.startsWith('Error: ')) {
-          name = name.slice(7);
-        }
-        text = `${name}\n${gray(rest.join('\n'))}`;
-      } else {
-        text = message.message;
+      text += normalizeErrorMessage(message);
+
+      const { cause } = message;
+      if (cause) {
+        text += yellow('\n  [cause]: ');
+        text +=
+          cause instanceof Error ? normalizeErrorMessage(cause) : String(cause);
       }
     }
     // change the color of error stacks to
