@@ -28,15 +28,15 @@
     "test": "rstest"
   },
   "devDependencies": {
-    "@rslib/core": "^0.15.1",
-    "@rstest/core": "^0.5.2",
+    "@rslib/core": "^0.17.0",
+    "@rstest/core": "^0.6.1",
     "@types/node": "^24.9.2",
     "prettier": "~3.6.2",
     "strip-ansi": "^7.1.2",
     "supports-color": "^10.2.2",
     "typescript": "~5.9.3"
   },
-  "packageManager": "pnpm@10.18.3",
+  "packageManager": "pnpm@10.20.0",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
