@@ -30,7 +30,7 @@
   "devDependencies": {
     "@rslib/core": "^0.15.1",
     "@rstest/core": "^0.5.2",
-    "@types/node": "^22.18.11",
+    "@types/node": "^24.9.2",
     "prettier": "~3.6.2",
     "strip-ansi": "^7.1.2",
     "supports-color": "^10.2.2",
