@@ -12,7 +12,6 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "moduleResolution": "node16",
-    "baseUrl": "./",
     "types": ["@rstest/core/globals"],
     "paths": {
       "@/*": ["./src/*"]
