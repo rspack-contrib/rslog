@@ -29,19 +29,25 @@ const printTestLogs = (logger: Logger) => {
 
 describe('logger', () => {
   test('should log as expected', () => {
-    console.log = rstest.fn();
+    console.log = rs.fn();
+    console.warn = rs.fn();
+    console.error = rs.fn();
 
     printTestLogs(logger);
 
-    expect(
-      (console.log as Mock).mock.calls.map(items =>
-        items.map(item => stripAnsi(item.toString())),
-      ),
-    ).toMatchSnapshot();
+    [console.log, console.warn, console.error].forEach(consoleFn => {
+      expect(
+        (consoleFn as Mock).mock.calls.map(items =>
+          items.map(item => stripAnsi(item.toString())),
+        ),
+      ).toMatchSnapshot();
+    });
   });
 
   test('should create new logger with info level correctly', () => {
     console.log = rs.fn();
+    console.warn = rs.fn();
+    console.error = rs.fn();
 
     const logger = createLogger({
       level: 'info',
@@ -49,15 +55,18 @@ describe('logger', () => {
 
     printTestLogs(logger);
 
-    expect(
-      (console.log as Mock).mock.calls.map(items =>
-        items.map(item => stripAnsi(item.toString())),
-      ),
-    ).toMatchSnapshot();
+    [console.log, console.warn, console.error].forEach(consoleFn => {
+      expect(
+        (consoleFn as Mock).mock.calls.map(items =>
+          items.map(item => stripAnsi(item.toString())),
+        ),
+      ).toMatchSnapshot();
+    });
   });
 
   test('should create new logger with warn level correctly', () => {
-    console.log = rs.fn();
+    console.warn = rs.fn();
+    console.error = rs.fn();
 
     const logger = createLogger({
       level: 'warn',
@@ -66,22 +75,27 @@ describe('logger', () => {
     printTestLogs(logger);
 
     expect(
-      (console.log as Mock).mock.calls.map(items =>
+      (console.warn as Mock).mock.calls.map(items =>
+        items.map(item => stripAnsi(item.toString())),
+      ),
+    ).toMatchSnapshot();
+    expect(
+      (console.error as Mock).mock.calls.map(items =>
         items.map(item => stripAnsi(item.toString())),
       ),
     ).toMatchSnapshot();
   });
 
   test('should log error with stack correctly', () => {
-    console.log = rs.fn();
+    console.error = rs.fn();
 
     logger.error(new Error('this is an error message'));
 
-    expect((console.log as Mock).mock.calls[0][0]).toMatchSnapshot();
+    expect((console.error as Mock).mock.calls[0][0]).toMatchSnapshot();
   });
 
   test('should log error with cause correctly', () => {
-    console.log = rs.fn();
+    console.error = rs.fn();
 
     logger.error(
       new Error('this is an error message with cause', {
@@ -89,7 +103,7 @@ describe('logger', () => {
       }),
     );
 
-    expect((console.log as Mock).mock.calls[0][0]).toMatchSnapshot();
+    expect((console.error as Mock).mock.calls[0][0]).toMatchSnapshot();
   });
 
   test('should create new logger with silent level correctly', () => {
