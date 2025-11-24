@@ -10,13 +10,7 @@ exports[`logger > should create new logger with info level correctly 1`] = `
     "this is a log message",
   ],
   [
-    "error   this is a error message",
-  ],
-  [
     "info    this is an info message",
-  ],
-  [
-    "warn    this is a warn message",
   ],
   [
     "ready   this is a ready message",
@@ -27,13 +21,34 @@ exports[`logger > should create new logger with info level correctly 1`] = `
 ]
 `;
 
-exports[`logger > should create new logger with warn level correctly 1`] = `
+exports[`logger > should create new logger with info level correctly 2`] = `
+[
+  [
+    "warn    this is a warn message",
+  ],
+]
+`;
+
+exports[`logger > should create new logger with info level correctly 3`] = `
 [
   [
     "error   this is a error message",
   ],
+]
+`;
+
+exports[`logger > should create new logger with warn level correctly 1`] = `
+[
   [
     "warn    this is a warn message",
+  ],
+]
+`;
+
+exports[`logger > should create new logger with warn level correctly 2`] = `
+[
+  [
+    "error   this is a error message",
   ],
 ]
 `;
@@ -48,13 +63,7 @@ exports[`logger > should log as expected 1`] = `
     "this is a log message",
   ],
   [
-    "error   this is a error message",
-  ],
-  [
     "info    this is an info message",
-  ],
-  [
-    "warn    this is a warn message",
   ],
   [
     "ready   this is a ready message",
@@ -65,9 +74,25 @@ exports[`logger > should log as expected 1`] = `
 ]
 `;
 
+exports[`logger > should log as expected 2`] = `
+[
+  [
+    "warn    this is a warn message",
+  ],
+]
+`;
+
+exports[`logger > should log as expected 3`] = `
+[
+  [
+    "error   this is a error message",
+  ],
+]
+`;
+
 exports[`logger > should log error with cause correctly 1`] = `
 error   this is an error message with cause
-    at <ROOT>/tests/logger.test.ts:87:7
+    at <ROOT>/tests/logger.test.ts:101:7
     at Object.fn (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0%7E85.js:580:25)
     at runTestsCase (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0%7E85.js:695:40)
     at runTest (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0%7E85.js:831:51)
@@ -79,7 +104,7 @@ error   this is an error message with cause
     at runInPool (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/worker.js:8442:25)
   [cause]: this is a cause error
     at getErrorCause (<ROOT>/tests/logger.test.ts:16:10)
-    at <ROOT>/tests/logger.test.ts:88:16
+    at <ROOT>/tests/logger.test.ts:102:16
     at Object.fn (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0%7E85.js:580:25)
     at runTestsCase (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0%7E85.js:695:40)
     at runTest (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0%7E85.js:831:51)
@@ -92,7 +117,7 @@ error   this is an error message with cause
 
 exports[`logger > should log error with stack correctly 1`] = `
 error   this is an error message
-    at <ROOT>/tests/logger.test.ts:78:18
+    at <ROOT>/tests/logger.test.ts:92:18
     at Object.fn (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0%7E85.js:580:25)
     at runTestsCase (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0%7E85.js:695:40)
     at runTest (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0%7E85.js:831:51)
