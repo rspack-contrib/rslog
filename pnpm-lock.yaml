@@ -17,6 +17,9 @@ importers:
       '@types/node':
         specifier: ^24.9.2
         version: 24.9.2
+      path-serializer:
+        specifier: ^0.5.1
+        version: 0.5.1
       prettier:
         specifier: ~3.6.2
         version: 3.6.2
@@ -329,6 +332,9 @@ packages:
   jiti@2.6.1:
     resolution: {integrity: sha512-ekilCSN1jwRvIbgeg/57YFh8qQDNbwDb9xT/qu2DAHbFFZUicIl4ygVaAvzveMhMVr3LnpSKTNnwt8PoOfmKhQ==}
     hasBin: true
+
+  path-serializer@0.5.1:
+    resolution: {integrity: sha512-bMTznw/TiZbmxlPQEV1pFatJFQcBKt3i9glDcPqygSx5xGrcM4MTCSjY+3SgW9Y628zfRmuJ1uAc/t/A3Tw0QA==}
 
   prettier@3.6.2:
     resolution: {integrity: sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==}
@@ -654,6 +660,8 @@ snapshots:
   core-js@3.46.0: {}
 
   jiti@2.6.1: {}
+
+  path-serializer@0.5.1: {}
 
   prettier@3.6.2: {}
 
