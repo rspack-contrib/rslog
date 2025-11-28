@@ -91,40 +91,13 @@ exports[`logger > should log as expected 3`] = `
 `;
 
 exports[`logger > should log error with cause correctly 1`] = `
-error   this is an error message with cause
-    at <ROOT>/tests/logger.test.ts:101:7
-    at Object.fn (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:580:25)
-    at runTestsCase (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:695:40)
-    at runTest (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:831:51)
-    at runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:761:25)
-    at runTest (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:809:25)
-    at runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:761:25)
-    at TestRunner.runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:867:17)
-    at Object.runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:1388:41)
-    at runInPool (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/worker.js:8442:25)
-  [cause]: this is a cause error
-    at getErrorCause (<ROOT>/tests/logger.test.ts:16:10)
-    at <ROOT>/tests/logger.test.ts:102:16
-    at Object.fn (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:580:25)
-    at runTestsCase (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:695:40)
-    at runTest (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:831:51)
-    at runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:761:25)
-    at runTest (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:809:25)
-    at runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:761:25)
-    at TestRunner.runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:867:17)
-    at Object.runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:1388:41)
+"<CLR=31,BOLD>error  </CLR>     at /rslog/foo/bar.js:29:0
+<CLR=90><CLR=39><CLR=33>
+  [cause]: <CLR=39>    at /rslog/foo/bar.js:29:0
+<CLR=90><CLR=39>"
 `;
 
 exports[`logger > should log error with stack correctly 1`] = `
-error   this is an error message
-    at <ROOT>/tests/logger.test.ts:92:18
-    at Object.fn (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:580:25)
-    at runTestsCase (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:695:40)
-    at runTest (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:831:51)
-    at runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:761:25)
-    at runTest (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:809:25)
-    at runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:761:25)
-    at TestRunner.runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:867:17)
-    at Object.runTests (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/0~85.js:1388:41)
-    at runInPool (file://<ROOT>/node_modules/.pnpm/@rstest+core@0.6.1/node_modules/@rstest/core/dist/worker.js:8442:25)
+"<CLR=31,BOLD>error  </CLR>     at /rslog/foo/bar.js:29:0
+<CLR=90><CLR=39>"
 `;

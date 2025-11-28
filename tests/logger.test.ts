@@ -1,19 +1,14 @@
 import { createLogger, Logger, logger } from '../src/index.js';
-import { join } from 'path';
 import { expect, test, describe, rs, Mock } from '@rstest/core';
 import stripAnsi from 'strip-ansi';
+import { createSnapshotSerializer } from 'path-serializer';
 
-const root = join(__dirname, '..');
-
-expect.addSnapshotSerializer({
-  test: val => typeof val === 'string' && val.includes(root),
-  print: val => {
-    return stripAnsi((val as any).toString().replaceAll(root, '<ROOT>'));
-  },
-});
+expect.addSnapshotSerializer(createSnapshotSerializer());
 
 const getErrorCause = () => {
-  return new Error('this is a cause error');
+  const err = new Error('this is a cause error');
+  err.stack = '    at /rslog/foo/bar.js:29:0';
+  return err;
 };
 
 const printTestLogs = (logger: Logger) => {
@@ -88,22 +83,28 @@ describe('logger', () => {
 
   test('should log error with stack correctly', () => {
     console.error = rs.fn();
+    
+    const err = new Error('this is an error message');
 
-    logger.error(new Error('this is an error message'));
+    err.stack = '    at /rslog/foo/bar.js:29:0';
+
+    logger.error(err);
 
     expect((console.error as Mock).mock.calls[0][0]).toMatchSnapshot();
   });
 
-  test.only('should log error with cause correctly', () => {
-    // console.error = rs.fn();
+  test('should log error with cause correctly', () => {
+    console.error = rs.fn();
 
-    logger.error(
-      new Error('this is an error message with cause', {
-        cause: getErrorCause(),
-      }),
-    );
+    const err = new Error('this is an error message with cause', {
+      cause: getErrorCause(),
+    });
 
-    // expect((console.error as Mock).mock.calls[0][0]).toMatchSnapshot();
+    err.stack = '    at /rslog/foo/bar.js:29:0';
+
+    logger.error(err);
+
+    expect((console.error as Mock).mock.calls[0][0]).toMatchSnapshot();
   });
 
   test('should create new logger with silent level correctly', () => {
