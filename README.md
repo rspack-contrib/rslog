@@ -17,7 +17,7 @@ A tiny, intuitive, type-friendly logger for Node.js.
 
 ## Preview
 
-![Artboard](https://github.com/rspack-contrib/rslog/assets/7237365/9677ecb3-eff1-4c0e-9392-9b61b248fe5c)
+![Artboard](https://github.com/rstackjs/rslog/assets/7237365/9677ecb3-eff1-4c0e-9392-9b61b248fe5c)
 
 ## Install
 
@@ -148,4 +148,4 @@ The color implementation of Rslog are modified from [alexeyraspopov/picocolors](
 
 ## License
 
-Rslog is [MIT licensed](https://github.com/rspack-contrib/rslog/blob/main/LICENSE).
+Rslog is [MIT licensed](https://github.com/rstackjs/rslog/blob/main/LICENSE).
